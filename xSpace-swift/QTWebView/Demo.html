@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+    <title>QTWebView Demo</title>
+	<style type='text/css'>
+        .container {
+            text-align: center;
+        }
+		h1 { 
+            color: gray; 
+            font-size: 24px;
+        }
+		button { 
+            margin: 0 3px 10px; 
+            font-size: 15px; 
+        }
+		.logLine { 
+            border-bottom: 1px solid #ccc; 
+            padding: 4px 4px; 
+            font-size: 12px; 
+        }
+	</style>
+</head>
+<body>
+    <script>
+        window.log = (function(){
+            var uniqueId = 1;
+            function _log(message, data) {
+                var logElem = document.getElementById("logContainer");
+                var newElem = document.createElement("div");
+                newElem.className = "logLine";
+                if (data) {
+                    console.log(message + ":<br/>" + data);
+                    newElem.innerHTML = uniqueId++ + '. ' + message + ':<br/>' + JSON.stringify(data);
+                }
+                else {
+                    console.log(message); 
+                    newElem.innerHTML = uniqueId++ + '. ' + message;
+                }
+                if (logElem.children.length) {
+                    logElem.insertBefore(newElem, logElem.children[0]);
+                }
+                else {
+                    logElem.appendChild(newElem);
+                }
+            }
+            return {log: _log};
+        })().log;
+
+        window.onerror = function(err) {
+            log("window.onerror: " + err);
+        };
+
+        function callNative(methodName, paramJson) {
+            window.webkit.messageHandlers[methodName].postMessage(paramJson);
+        }
+
+        function callGetName() {
+            callNative("getName", {"callback":"getNameCallback"});
+        }
+    
+        function getNameCallback(data){
+            log("callGetName return: ", data);
+        }
+
+        function callDoSthAndCallJS() {
+            callNative("doSthAndCallJS", {"callback":"doSthAndCallJSCallback"});
+        }
+    
+        function doSthAndCallJSCallback(data){
+            log("callDoSthAndCallJS return: ", data);
+        }
+    </script>
+    
+    <div class="container">
+        <h1>Swift Webview Demo</h1>
+        <button type="button" onclick="document.getElementById('logContainer').innerHTML = ''">Clear Log</button>
+        <br/>
+        <button type="button" onclick="callGetName()">callGetName</button>
+        <br/>
+        <button type="button" onclick="callDoSthAndCallJS()">callDoSthAndCallJS</button>
+        <br/>
+        <div id='logContainer'></div>
+    </div>
+</body>
+</html>
