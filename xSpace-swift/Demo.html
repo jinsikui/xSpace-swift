@@ -55,20 +55,24 @@
             window.webkit.messageHandlers[methodName].postMessage(paramJson);
         }
 
-        function callGetName() {
+        function getName() {
             callNative("getName", {"callback":"getNameCallback"});
         }
     
         function getNameCallback(data){
-            log("callGetName return: ", data);
+            log("getName return: ", data);
         }
 
-        function callDoSthAndCallJS() {
+        function doSthAndCallJS() {
             callNative("doSthAndCallJS", {"callback":"doSthAndCallJSCallback"});
         }
     
         function doSthAndCallJSCallback(data){
-            log("callDoSthAndCallJS return: ", data);
+            log("doSthAndCallJS return: ", data);
+        }
+    
+        function goToH5(){
+            callNative("goToH5", {"url":"https://m-staging.zhibo.qingting.fm/push-stream/3796a2a0ebcff2e2c206fd9a58a6922e?user_token=eyJhbGciOiJIUzI1NiJ9.Mzc5NmEyYTBlYmNmZjJlMmMyMDZmZDlhNThhNjkyMmU.X04V-Cfpj_dLWBG938suoCEo5BUjiV52MKZDdwBMDNM","title":"H5"});
         }
     </script>
     
@@ -76,9 +80,11 @@
         <h1>Swift Webview Demo</h1>
         <button type="button" onclick="document.getElementById('logContainer').innerHTML = ''">Clear Log</button>
         <br/>
-        <button type="button" onclick="callGetName()">callGetName</button>
+        <button type="button" onclick="getName()">getName</button>
         <br/>
-        <button type="button" onclick="callDoSthAndCallJS()">callDoSthAndCallJS</button>
+        <button type="button" onclick="doSthAndCallJS()">doSthAndCallJS</button>
+        <br/>
+        <button type="button" onclick="goToH5()">goToH5</button>
         <br/>
         <div id='logContainer'></div>
     </div>

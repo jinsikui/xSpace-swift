@@ -1,15 +1,21 @@
 PODS:
   - SnapKit (3.0.2)
   - SwiftyJSON (3.1.4)
+  - Swinject (2.1.1)
+  - SwinjectStoryboard (1.1.2):
+    - Swinject (~> 2.1)
 
 DEPENDENCIES:
   - SnapKit (~> 3.0.0)
   - SwiftyJSON
+  - SwinjectStoryboard
 
 SPEC CHECKSUMS:
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  Swinject: afea49fd95f392b41171669f165842879c48fad6
+  SwinjectStoryboard: 92e75763c3299cdf627bef98a5180dc894864336
 
-PODFILE CHECKSUM: 5b89b81983e49dbc354011329144b9e5dd02d319
+PODFILE CHECKSUM: 246de8a5ad1485a3ccbc5a5318f1ebaa6881a223
 
 COCOAPODS: 1.3.1

@@ -8,27 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		63EE25281F8CBFC400E1A36A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EE25271F8CBFC400E1A36A /* AppDelegate.swift */; };
-		63EE252A1F8CBFC400E1A36A /* QTWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EE25291F8CBFC400E1A36A /* QTWebViewController.swift */; };
 		63EE252D1F8CBFC400E1A36A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EE252B1F8CBFC400E1A36A /* Main.storyboard */; };
 		63EE252F1F8CBFC400E1A36A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63EE252E1F8CBFC400E1A36A /* Assets.xcassets */; };
 		63EE25321F8CBFC400E1A36A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EE25301F8CBFC400E1A36A /* LaunchScreen.storyboard */; };
-		63EE253A1F8CC04A00E1A36A /* QTWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EE25391F8CC04A00E1A36A /* QTWebView.swift */; };
-		63F1F8EA1F8E099000CA8466 /* Demo.html in Resources */ = {isa = PBXBuildFile; fileRef = 63F1F8E91F8E099000CA8466 /* Demo.html */; };
 		63F1F8F11F8E28E900CA8466 /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F1F8F01F8E28E900CA8466 /* RootController.swift */; };
+		63F1F8F31F905D2D00CA8466 /* ControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F1F8F21F905D2D00CA8466 /* ControllerManager.swift */; };
+		63F1F8FF1F90BA1800CA8466 /* Demo.html in Resources */ = {isa = PBXBuildFile; fileRef = 63F1F8FB1F90BA1800CA8466 /* Demo.html */; };
+		63F1F9001F90BA1800CA8466 /* H5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F1F8FC1F90BA1800CA8466 /* H5ViewController.swift */; };
+		63F1F9011F90BA1800CA8466 /* QTWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F1F8FD1F90BA1800CA8466 /* QTWebView.swift */; };
+		63F1F9021F90BA1800CA8466 /* QTWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F1F8FE1F90BA1800CA8466 /* QTWebViewController.swift */; };
+		63F1F9061F90BB9F00CA8466 /* QTBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F1F9051F90BB9F00CA8466 /* QTBaseViewController.swift */; };
 		EE13B97998AC0BE5E01950AF /* Pods_xSpace_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E59FB21DBB978D04BCA7F78 /* Pods_xSpace_swift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		63EE25241F8CBFC400E1A36A /* xSpace-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "xSpace-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63EE25271F8CBFC400E1A36A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		63EE25291F8CBFC400E1A36A /* QTWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTWebViewController.swift; sourceTree = "<group>"; };
 		63EE252C1F8CBFC400E1A36A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63EE252E1F8CBFC400E1A36A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63EE25311F8CBFC400E1A36A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63EE25331F8CBFC400E1A36A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63EE25391F8CC04A00E1A36A /* QTWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTWebView.swift; sourceTree = "<group>"; };
-		63F1F8E91F8E099000CA8466 /* Demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Demo.html; sourceTree = "<group>"; };
 		63F1F8F01F8E28E900CA8466 /* RootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
+		63F1F8F21F905D2D00CA8466 /* ControllerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerManager.swift; sourceTree = "<group>"; };
+		63F1F8FB1F90BA1800CA8466 /* Demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = Demo.html; path = "xSpace-swift/Demo.html"; sourceTree = SOURCE_ROOT; };
+		63F1F8FC1F90BA1800CA8466 /* H5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = H5ViewController.swift; path = "xSpace-swift/H5ViewController.swift"; sourceTree = SOURCE_ROOT; };
+		63F1F8FD1F90BA1800CA8466 /* QTWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QTWebView.swift; path = "xSpace-swift/QTWebView.swift"; sourceTree = SOURCE_ROOT; };
+		63F1F8FE1F90BA1800CA8466 /* QTWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QTWebViewController.swift; path = "xSpace-swift/QTWebViewController.swift"; sourceTree = SOURCE_ROOT; };
+		63F1F9051F90BB9F00CA8466 /* QTBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTBaseViewController.swift; sourceTree = "<group>"; };
 		7858ABFC921EB29F0F862B54 /* Pods-xSpace-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xSpace-swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-xSpace-swift/Pods-xSpace-swift.release.xcconfig"; sourceTree = "<group>"; };
 		8EE3545C7E4940D0C03FC28A /* Pods-xSpace-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xSpace-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xSpace-swift/Pods-xSpace-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		9E59FB21DBB978D04BCA7F78 /* Pods_xSpace_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_xSpace_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,25 +90,36 @@
 		63EE25261F8CBFC400E1A36A /* xSpace-swift */ = {
 			isa = PBXGroup;
 			children = (
-				63EE253B1F8CC07600E1A36A /* QTWebView */,
+				63F1F9041F90BB6300CA8466 /* QTCommon */,
+				63F1F8FA1F90B9F900CA8466 /* QTWebView */,
 				63EE25271F8CBFC400E1A36A /* AppDelegate.swift */,
 				63EE252B1F8CBFC400E1A36A /* Main.storyboard */,
 				63EE252E1F8CBFC400E1A36A /* Assets.xcassets */,
 				63EE25301F8CBFC400E1A36A /* LaunchScreen.storyboard */,
 				63EE25331F8CBFC400E1A36A /* Info.plist */,
 				63F1F8F01F8E28E900CA8466 /* RootController.swift */,
+				63F1F8F21F905D2D00CA8466 /* ControllerManager.swift */,
 			);
 			path = "xSpace-swift";
 			sourceTree = "<group>";
 		};
-		63EE253B1F8CC07600E1A36A /* QTWebView */ = {
+		63F1F8FA1F90B9F900CA8466 /* QTWebView */ = {
 			isa = PBXGroup;
 			children = (
-				63EE25291F8CBFC400E1A36A /* QTWebViewController.swift */,
-				63F1F8E91F8E099000CA8466 /* Demo.html */,
-				63EE25391F8CC04A00E1A36A /* QTWebView.swift */,
+				63F1F8FB1F90BA1800CA8466 /* Demo.html */,
+				63F1F8FC1F90BA1800CA8466 /* H5ViewController.swift */,
+				63F1F8FD1F90BA1800CA8466 /* QTWebView.swift */,
+				63F1F8FE1F90BA1800CA8466 /* QTWebViewController.swift */,
 			);
 			path = QTWebView;
+			sourceTree = "<group>";
+		};
+		63F1F9041F90BB6300CA8466 /* QTCommon */ = {
+			isa = PBXGroup;
+			children = (
+				63F1F9051F90BB9F00CA8466 /* QTBaseViewController.swift */,
+			);
+			name = QTCommon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,7 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63EE25321F8CBFC400E1A36A /* LaunchScreen.storyboard in Resources */,
-				63F1F8EA1F8E099000CA8466 /* Demo.html in Resources */,
+				63F1F8FF1F90BA1800CA8466 /* Demo.html in Resources */,
 				63EE252F1F8CBFC400E1A36A /* Assets.xcassets in Resources */,
 				63EE252D1F8CBFC400E1A36A /* Main.storyboard in Resources */,
 			);
@@ -219,11 +236,15 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-xSpace-swift/Pods-xSpace-swift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -237,9 +258,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63EE253A1F8CC04A00E1A36A /* QTWebView.swift in Sources */,
-				63EE252A1F8CBFC400E1A36A /* QTWebViewController.swift in Sources */,
+				63F1F9011F90BA1800CA8466 /* QTWebView.swift in Sources */,
+				63F1F9061F90BB9F00CA8466 /* QTBaseViewController.swift in Sources */,
+				63F1F8F31F905D2D00CA8466 /* ControllerManager.swift in Sources */,
+				63F1F9001F90BA1800CA8466 /* H5ViewController.swift in Sources */,
 				63EE25281F8CBFC400E1A36A /* AppDelegate.swift in Sources */,
+				63F1F9021F90BA1800CA8466 /* QTWebViewController.swift in Sources */,
 				63F1F8F11F8E28E900CA8466 /* RootController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

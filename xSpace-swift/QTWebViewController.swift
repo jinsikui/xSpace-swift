@@ -9,13 +9,29 @@
 import UIKit
 import SwiftyJSON
 
-class QTWebViewController: UIViewController {
+
+class QTWebViewController: QTBaseViewController {
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.prepare()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.prepare()
+    }
+    
+    func prepare(){
+        super.showNavBar = false
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //
         let webview = QTWebView(frame:self.view.bounds)
         self.view.addSubview(webview)
-        //webview.loadUrl(url: "https://m-staging.zhibo.qingting.fm/push-stream/3796a2a0ebcff2e2c206fd9a58a6922e?user_token=eyJhbGciOiJIUzI1NiJ9.Mzc5NmEyYTBlYmNmZjJlMmMyMDZmZDlhNThhNjkyMmU.X04V-Cfpj_dLWBG938suoCEo5BUjiV52MKZDdwBMDNM")
+        //
         guard let urlPath = Bundle.main.url(forResource: "Demo", withExtension: "html") else {
             print("Couldn't find the Demo.html file in bundle!")
             return
@@ -25,13 +41,27 @@ class QTWebViewController: UIViewController {
             urlString  = try String(contentsOf: urlPath)
             webview.loadHTMLString(html:urlString)
             webview.registerNativeCallback(name: "getName", handler: { (any) -> Any? in
-                return "JSK"
+                let nickname:String? = nil
+                let name = "JSK"
+                return ["name":name, "nickname":nickname]
             })
             weak var weak = webview;
             webview.registerNativeCallback(name: "doSthAndCallJS", handler: { (any) -> Any? in
                 DispatchQueue.main.asyncAfter(deadline: .now()+3, execute: {
                     weak?.callNativeHandlerJSCallback(handlerName: "doSthAndCallJS", retValue: "Hellow world")
                 })
+                return nil
+            })
+            webview.registerNativeCallback(name: "goToH5", handler: { (params) -> Any? in
+                guard let paramDic = params as? NSDictionary else{
+                    return nil
+                }
+                guard let url = paramDic["url"] as? String else{
+                    return nil
+                }
+                let title = paramDic["title"] as? String
+                let h5Controller = H5ViewController(url: url, title:title)
+                self.navigationController?.pushViewController(h5Controller, animated: true)
                 return nil
             })
         }

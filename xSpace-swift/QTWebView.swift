@@ -9,15 +9,12 @@
 import UIKit
 import WebKit
 import SwiftyJSON
+import SnapKit
 
 class QTHandlerContext:NSObject{
     var handlerName: String?
     var nativeHandler: ((Any?)->Any?)?
     var jsCallbackName: String?
-    
-    override init() {
-        super.init()
-    }
 }
 
 class QTWebView: UIView, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
@@ -28,25 +25,34 @@ class QTWebView: UIView, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHand
     var html:String?
     //store the native handlers
     var handlerDic:Dictionary<String,QTHandlerContext>?
-    
+    static let userAgent = "PushStream Mozilla/5.0 (iPhone; CPU iPhone OS \(UIDevice.current.systemVersion) like Mac OS X)"
     
     override init(frame: CGRect) {
         super.init(frame:frame)
-        //
-        self.userContentController = WKUserContentController()
-        let config = WKWebViewConfiguration()
-        config.userContentController = self.userContentController!
-        let webView = WKWebView(frame: frame, configuration: config)
-        webView.uiDelegate = self
-        webView.navigationDelegate = self
-        self.webView = webView
-        self.addSubview(self.webView!)
-        //
-        self.handlerDic = Dictionary<String, QTHandlerContext>()
+        self.prepare()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.prepare()
+    }
+    
+    func prepare(){
+        //
+        self.userContentController = WKUserContentController()
+        let config = WKWebViewConfiguration()
+        config.userContentController = self.userContentController!
+        let webView = WKWebView(frame: CGRect.zero, configuration: config)
+        self.webView = webView
+        webView.uiDelegate = self
+        webView.navigationDelegate = self
+        webView.customUserAgent = QTWebView.userAgent
+        self.addSubview(webView)
+        webView.snp.makeConstraints { (make) -> Void in
+            make.top.bottom.left.right.equalTo(0)
+        }
+        //
+        self.handlerDic = Dictionary<String, QTHandlerContext>()
     }
     
     func loadUrl(url:String){
@@ -138,15 +144,14 @@ class QTWebView: UIView, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHand
     
     // 发送请求之前，决定是否跳转
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Swift.Void){
-        let request = navigationAction.request
-        let url = request.url!.absoluteString
-        print(url)
         decisionHandler(WKNavigationActionPolicy.allow)
     }
     
     // 页面开始加载时
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         print("load start")
+        //for ios 8
+        webView.evaluateJavaScript("navigator.userAgent = '\(QTWebView.userAgent)'", completionHandler: nil)
     }
     
     // 页面加载失败
@@ -159,3 +164,4 @@ class QTWebView: UIView, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHand
         print("load finish")
     }
 }
+
