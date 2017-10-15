@@ -7,6 +7,12 @@
 //
 
 import UIKit
+import RxSwift
+
+enum MyError: Error {
+    case FoundNil(String)
+}
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

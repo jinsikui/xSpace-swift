@@ -8,6 +8,7 @@ target 'xSpace-swift' do
   pod 'SwiftyJSON'
   pod 'SnapKit', '~> 3.0.0'
   pod 'SwinjectStoryboard'
+  pod 'RxAlamofire'
 end
 
 post_install do |installer|
