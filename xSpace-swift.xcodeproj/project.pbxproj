@@ -22,7 +22,6 @@
 		63E28CD01FA8AB8E00F22C44 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28CCE1FA8AB8E00F22C44 /* API.swift */; };
 		63E28CD51FA8ACA900F22C44 /* QtFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28CD41FA8ACA800F22C44 /* QtFile.swift */; };
 		63E3B5B91FAABFD80039FE5D /* QtWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E3B5B81FAABFD80039FE5D /* QtWebView.swift */; };
-		63E3B5BD1FAAC0920039FE5D /* QtWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E3B5BC1FAAC0920039FE5D /* QtWebViewController.swift */; };
 		63E3B5BF1FAAC2470039FE5D /* DrawController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E3B5BE1FAAC2470039FE5D /* DrawController.swift */; };
 		63E3B5C11FAAC2930039FE5D /* QtBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E3B5C01FAAC2930039FE5D /* QtBaseViewController.swift */; };
 		63E3B5C31FAAC2FD0039FE5D /* QtCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E3B5C21FAAC2FD0039FE5D /* QtCornerView.swift */; };
@@ -53,7 +52,6 @@
 		63E28CCE1FA8AB8E00F22C44 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		63E28CD41FA8ACA800F22C44 /* QtFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtFile.swift; sourceTree = "<group>"; };
 		63E3B5B81FAABFD80039FE5D /* QtWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QtWebView.swift; sourceTree = "<group>"; };
-		63E3B5BC1FAAC0920039FE5D /* QtWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QtWebViewController.swift; sourceTree = "<group>"; };
 		63E3B5BE1FAAC2470039FE5D /* DrawController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawController.swift; sourceTree = "<group>"; };
 		63E3B5C01FAAC2930039FE5D /* QtBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtBaseViewController.swift; sourceTree = "<group>"; };
 		63E3B5C21FAAC2FD0039FE5D /* QtCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QtCornerView.swift; sourceTree = "<group>"; };
@@ -197,7 +195,6 @@
 				63F1F9081F91D49300CA8466 /* Demo.html */,
 				63F1F9091F91D49300CA8466 /* H5ViewController.swift */,
 				63E3B5B81FAABFD80039FE5D /* QtWebView.swift */,
-				63E3B5BC1FAAC0920039FE5D /* QtWebViewController.swift */,
 			);
 			name = QtWebView;
 			sourceTree = "<group>";
@@ -358,7 +355,6 @@
 				63E3B5B91FAABFD80039FE5D /* QtWebView.swift in Sources */,
 				63E28CCB1FA8679C00F22C44 /* YYTextController.swift in Sources */,
 				63E28CC41FA862D700F22C44 /* QtGenericGridView.swift in Sources */,
-				63E3B5BD1FAAC0920039FE5D /* QtWebViewController.swift in Sources */,
 				63E28CD51FA8ACA900F22C44 /* QtFile.swift in Sources */,
 				63E28CBE1FA8626500F22C44 /* QtViewFactory.swift in Sources */,
 				63F1F8F31F905D2D00CA8466 /* ControllerManager.swift in Sources */,
