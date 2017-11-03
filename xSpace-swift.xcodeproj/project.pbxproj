@@ -110,17 +110,10 @@
 			name = "method exchange";
 			sourceTree = "<group>";
 		};
-		639296B71FACB393008E0935 /* Notice */ = {
-			isa = PBXGroup;
-			children = (
-				639296B81FACB3BD008E0935 /* QtNotice.swift */,
-			);
-			name = Notice;
-			sourceTree = "<group>";
-		};
 		63BD76211F9853C6004D25D4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				639296B81FACB3BD008E0935 /* QtNotice.swift */,
 				63E3B5C01FAAC2930039FE5D /* QtBaseViewController.swift */,
 				63E28CD41FA8ACA800F22C44 /* QtFile.swift */,
 				63E28CCE1FA8AB8E00F22C44 /* API.swift */,
@@ -174,7 +167,6 @@
 		63EE25261F8CBFC400E1A36A /* xSpace-swift */ = {
 			isa = PBXGroup;
 			children = (
-				639296B71FACB393008E0935 /* Notice */,
 				63E3B5B71FAABEF20039FE5D /* Draw */,
 				63E28CC91FA8676400F22C44 /* YYText */,
 				636BCD911F9EF66C00B49ABB /* method exchange */,
