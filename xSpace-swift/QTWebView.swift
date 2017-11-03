@@ -1,31 +1,41 @@
 //
-//  QTWebView.swift
-//  LiveAssistant
+//  QtWebView.swift
+//  xSpace-swift
 //
-//  Created by JSK on 2017/10/10.
-//  Copyright © 2017年 Shanghai MarkPhone Culture Media Co., Ltd. All rights reserved.
+//  Created by JSK on 2017/11/2.
+//  Copyright © 2017年 JSK. All rights reserved.
 //
 
 import UIKit
 import WebKit
 import SwiftyJSON
 import SnapKit
+import PKHUD
 
-class QTHandlerContext:NSObject{
+class QtHandlerContext:NSObject{
     var handlerName: String?
     var nativeHandler: ((Any?)->Any?)?
     var jsCallbackName: String?
 }
 
-class QTWebView: UIView, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
-    
+class QtWebView: UIView, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
+    var isFirstLoad = true
     var webView: WKWebView?
     var userContentController: WKUserContentController?
     var url:String?
     var html:String?
     //store the native handlers
-    var handlerDic:Dictionary<String,QTHandlerContext>?
-    static let userAgent = "PushStream Mozilla/5.0 (iPhone; CPU iPhone OS \(UIDevice.current.systemVersion) like Mac OS X)"
+    var handlerDic:Dictionary<String,QtHandlerContext>?
+    static let userAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS \(UIDevice.current.systemVersion) like Mac OS X)"
+    var alwaysBounceVertical:Bool{
+        set{
+            webView!.scrollView.alwaysBounceVertical = newValue
+        }
+        get{
+            return webView!.scrollView.alwaysBounceVertical
+        }
+    }
+    
     
     override init(frame: CGRect) {
         super.init(frame:frame)
@@ -46,13 +56,13 @@ class QTWebView: UIView, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHand
         self.webView = webView
         webView.uiDelegate = self
         webView.navigationDelegate = self
-        webView.customUserAgent = QTWebView.userAgent
+        webView.customUserAgent = QtWebView.userAgent
         self.addSubview(webView)
         webView.snp.makeConstraints { (make) -> Void in
             make.top.bottom.left.right.equalTo(0)
         }
         //
-        self.handlerDic = Dictionary<String, QTHandlerContext>()
+        self.handlerDic = Dictionary<String, QtHandlerContext>()
     }
     
     func loadUrl(url:String){
@@ -70,7 +80,7 @@ class QTWebView: UIView, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHand
     // js通过：window.webkit.messageHandlers[函数名].postMessage(paramsJSONObject)来调用，如果需要返回值paramsJSONObject需提供callback:'回调函数名'属性
     func registerNativeCallback(name:String, handler:@escaping (Any?)->Any?){
         self.userContentController!.add(self, name: name)
-        let handlerContext = QTHandlerContext()
+        let handlerContext = QtHandlerContext()
         handlerContext.handlerName = name
         handlerContext.nativeHandler = handler
         handlerContext.jsCallbackName = nil
@@ -149,19 +159,30 @@ class QTWebView: UIView, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHand
     
     // 页面开始加载时
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        print("load start")
+        #if DEBUG
+            print("load start")
+        #endif
+        if(isFirstLoad){
+            isFirstLoad = false
+            HUD.show(.progress)
+        }
         //for ios 8
-        webView.evaluateJavaScript("navigator.userAgent = '\(QTWebView.userAgent)'", completionHandler: nil)
+        webView.evaluateJavaScript("navigator.userAgent = '\(QtWebView.userAgent)'", completionHandler: nil)
     }
     
     // 页面加载失败
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        print("load fail")
+        #if DEBUG
+            print("load fail")
+        #endif
+        HUD.hide()
     }
     
     // 页面加载完成
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        print("load finish")
+        #if DEBUG
+            print("load finish")
+        #endif
+        HUD.hide()
     }
 }
-

@@ -10,26 +10,20 @@ import UIKit
 import SwiftyJSON
 
 
-class QTWebViewController: QTBaseViewController {
+class QtWebViewController: QtBaseViewController {
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        self.prepare()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.prepare()
     }
     
-    func prepare(){
-        super.showNavBar = false
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         //
-        let webview = QTWebView(frame:self.view.bounds)
+        let webview = QtWebView(frame:self.view.bounds)
         self.view.addSubview(webview)
         //
         guard let urlPath = Bundle.main.url(forResource: "Demo", withExtension: "html") else {
@@ -41,6 +35,14 @@ class QTWebViewController: QTBaseViewController {
             urlString  = try String(contentsOf: urlPath)
             webview.loadHTMLString(html:urlString)
             webview.registerNativeCallback(name: "getName", handler: { (any) -> Any? in
+                guard let paramDic = any as? NSDictionary else{
+                    return nil
+                }
+                guard let floatValue = paramDic["floatValue"] as? Float else{
+                    return nil
+                }
+                print(floatValue)
+                //
                 let nickname:String? = nil
                 let name = "JSK"
                 return ["name":name, "nickname":nickname]
@@ -70,12 +72,13 @@ class QTWebViewController: QTBaseViewController {
             return
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
+
 

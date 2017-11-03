@@ -9,14 +9,13 @@
 import UIKit
 import SnapKit
 
-class H5ViewController: QTBaseViewController {
+class H5ViewController: QtBaseViewController {
     
-    var qtWebView: QTWebView!
+    var qtWebView: QtWebView!
     var url:String!
     
     init(url:String, title:String? = nil, showNavBar:Bool = true){
         super.init(nibName: nil, bundle: nil)
-        super.showNavBar = showNavBar
         self.url = url
         self.title = title
     }
@@ -28,7 +27,7 @@ class H5ViewController: QTBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //
-        let qtWebView = QTWebView(frame: CGRect.zero)
+        let qtWebView = QtWebView(frame: CGRect.zero)
         self.qtWebView = qtWebView
         self.view.addSubview(qtWebView)
         qtWebView.snp.makeConstraints { (make) in

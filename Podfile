@@ -9,6 +9,9 @@ target 'xSpace-swift' do
   pod 'SnapKit', '~> 3.0.0'
   pod 'SwinjectStoryboard'
   pod 'RxAlamofire'
+  pod 'YYText'
+  pod 'AlamofireImage'
+  pod 'PKHUD'
 end
 
 post_install do |installer|
