@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6302FEC61FACCE8400F978DA /* QtWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6302FEC51FACCE8400F978DA /* QtWebViewController.swift */; };
+		6302FEC91FAD49C500F978DA /* NoticeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6302FEC81FAD49C500F978DA /* NoticeController.swift */; };
 		6387BD2B1F9F014D00D5BD66 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387BD2A1F9F014D00D5BD66 /* BaseViewController.swift */; };
 		6387BD2D1F9F01C600D5BD66 /* AViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387BD2C1F9F01C600D5BD66 /* AViewController.swift */; };
 		639296B61FAC8105008E0935 /* ObjectWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639296B51FAC8105008E0935 /* ObjectWrapper.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		6302FEC51FACCE8400F978DA /* QtWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtWebViewController.swift; sourceTree = "<group>"; };
+		6302FEC81FAD49C500F978DA /* NoticeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeController.swift; sourceTree = "<group>"; };
 		6387BD2A1F9F014D00D5BD66 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		6387BD2C1F9F01C600D5BD66 /* AViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AViewController.swift; sourceTree = "<group>"; };
 		639296B51FAC8105008E0935 /* ObjectWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectWrapper.swift; sourceTree = "<group>"; };
@@ -99,6 +101,14 @@
 				9E59FB21DBB978D04BCA7F78 /* Pods_xSpace_swift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6302FEC71FAD499D00F978DA /* QtNotice */ = {
+			isa = PBXGroup;
+			children = (
+				6302FEC81FAD49C500F978DA /* NoticeController.swift */,
+			);
+			name = QtNotice;
 			sourceTree = "<group>";
 		};
 		636BCD911F9EF66C00B49ABB /* method exchange */ = {
@@ -167,6 +177,7 @@
 		63EE25261F8CBFC400E1A36A /* xSpace-swift */ = {
 			isa = PBXGroup;
 			children = (
+				6302FEC71FAD499D00F978DA /* QtNotice */,
 				63E3B5B71FAABEF20039FE5D /* Draw */,
 				63E28CC91FA8676400F22C44 /* YYText */,
 				636BCD911F9EF66C00B49ABB /* method exchange */,
@@ -357,6 +368,7 @@
 				63E28CC51FA862D700F22C44 /* QtDevice.swift in Sources */,
 				639296B91FACB3BD008E0935 /* QtNotice.swift in Sources */,
 				6387BD2B1F9F014D00D5BD66 /* BaseViewController.swift in Sources */,
+				6302FEC91FAD49C500F978DA /* NoticeController.swift in Sources */,
 				63EE25281F8CBFC400E1A36A /* AppDelegate.swift in Sources */,
 				63F1F90D1F91D49300CA8466 /* H5ViewController.swift in Sources */,
 				63F1F8F11F8E28E900CA8466 /* RootController.swift in Sources */,

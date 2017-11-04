@@ -40,6 +40,8 @@ class QtNotice : NSObject {
     private var bindQueue:DispatchQueue!
     private var timer: DispatchSourceTimer!
     private var timerTable:NSMapTable<AnyObject, QtTimerContext>!
+    private var isTimerRunning = false
+    private var hasRegisttered = false
     
     private override init(){
         super.init()
@@ -61,6 +63,10 @@ class QtNotice : NSObject {
     }
     
     func registerNotices(){
+        if(hasRegisttered){
+            return
+        }
+        hasRegisttered = true
         NotificationCenter.default.addObserver(self, selector: #selector(appFinishLaunching), name: NSNotification.Name.UIApplicationDidFinishLaunching, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(appEnterBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(appBecomeActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
@@ -93,6 +99,22 @@ class QtNotice : NSObject {
         }
     }
     
+    private func resumeTimer(){
+        if(isTimerRunning){
+            return
+        }
+        isTimerRunning = true
+        timer.resume()
+    }
+    
+    private func suspendTimer(){
+        if(!isTimerRunning){
+            return
+        }
+        isTimerRunning = false
+        timer.suspend()
+    }
+    
     //MARK: - Notification handlers
     
     @objc func appFinishLaunching(notification: NSNotification){
@@ -103,7 +125,7 @@ class QtNotice : NSObject {
     
     @objc func appBecomeActive(notification: NSNotification){
         bindQueue.async {
-            self.timer.resume()
+            self.resumeTimer()
             self.timerTicking()
             self.runAction(key: QtNotice.kAppBecomeActive, param: notification.userInfo)
         }
@@ -111,21 +133,21 @@ class QtNotice : NSObject {
     
     @objc func appWillResignActive(notification: NSNotification){
         bindQueue.async {
-            self.timer.suspend()
+            self.suspendTimer()
             self.runAction(key: QtNotice.kAppWillResignActive, param: notification.userInfo)
         }
     }
     
     @objc func appEnterBackground(notification: NSNotification){
         bindQueue.async {
-            self.timer.suspend()
+            self.suspendTimer()
             self.runAction(key: QtNotice.kAppEnterBackground, param: notification.userInfo)
         }
     }
     
     @objc func appWillTerminate(notification: NSNotification){
         bindQueue.async {
-            self.timer.suspend()
+            self.suspendTimer()
             self.runAction(key: QtNotice.kAppWillTerminate, param: notification.userInfo)
         }
     }
@@ -133,7 +155,7 @@ class QtNotice : NSObject {
     func timerTicking(){
         let mapTable = actionDic[QtNotice.kTimerTicking];
         if (mapTable == nil || mapTable!.count <= 0) {
-            timer.suspend()
+            self.suspendTimer()
             return;
         }
         self.runAction(key: QtNotice.kTimerTicking, param: nil)
@@ -180,7 +202,7 @@ class QtNotice : NSObject {
     private func registerTimerTicking(lifeIndicator:AnyObject, action:@escaping (Any?)->()) {
         bindQueue.async(execute: DispatchWorkItem(flags: .barrier) {
             self.setAction(QtNotice.kTimerTicking, lifeIndicator: lifeIndicator, action: action)
-            self.timer.resume()
+            self.resumeTimer()
         })
     }
     

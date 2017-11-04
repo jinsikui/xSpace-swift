@@ -25,9 +25,6 @@ class RootController: UIViewController {
         timer.setEventHandler {
             self.timerTicking()
         }
-        QtNotice.shared.registerSignIn(lifeIndicator: self) { [weak self] (any) in
-            self?.fireSignIn()
-        }
         
         scroll = UIScrollView()
         scroll.alwaysBounceVertical = true
@@ -73,7 +70,7 @@ class RootController: UIViewController {
         btn.frame = CGRect(x: x, y: 470, width: 150, height: 50)
         scroll.addSubview(btn)
         //
-        btn = QtViewFactory.button(text: "Notice", font: QtFont.regularPF(15), textColor:QtColor.blue, bgColor:QtColor.white, cornerRadius: 2, borderColor: QtColor.blue)
+        btn = QtViewFactory.button(text: "QtNotice", font: QtFont.regularPF(15), textColor:QtColor.blue, bgColor:QtColor.white, cornerRadius: 2, borderColor: QtColor.blue)
         btn.addTarget(self, action: #selector(actionNotice), for: .touchUpInside)
         btn.frame = CGRect(x: x, y: 540, width: 150, height: 50)
         scroll.addSubview(btn)
@@ -81,12 +78,8 @@ class RootController: UIViewController {
         scroll.contentSize = CGSize(width:0, height:610)
     }
     
-    func fireSignIn(){
-        print("===== fire sign in =====")
-    }
-    
     @objc func actionNotice(){
-        QtNotice.shared.postSignIn()
+        self.navigationController!.pushViewController(NoticeController(), animated: true)
     }
     
     var count = 0
