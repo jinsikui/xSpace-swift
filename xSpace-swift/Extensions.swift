@@ -51,6 +51,11 @@ extension NSMutableAttributedString{
         self.append(attr)
         return self
     }
+    
+    static func qt_attrStrWith(str:String, foreColor:UIColor, font:UIFont) -> NSMutableAttributedString{
+        let attr = NSMutableAttributedString(string: str, attributes: [NSAttributedStringKey.foregroundColor: foreColor, NSAttributedStringKey.font: font])
+        return attr
+    }
 }
 
 extension String {

@@ -12,38 +12,39 @@ import SnapKit
 extension UICollectionViewCell{
     var qt_data:Any?{
         get {
-            return objc_getAssociatedObject(self, UICollectionViewCellRuntimeKey.KEY_data)
+            return objc_getAssociatedObject(self, UICollectionViewCellRuntimeKey.KEY_data!)
         }
         set {
-            objc_setAssociatedObject(self, UICollectionViewCellRuntimeKey.KEY_data, newValue, .OBJC_ASSOCIATION_RETAIN)
+            objc_setAssociatedObject(self, UICollectionViewCellRuntimeKey.KEY_data!, newValue, .OBJC_ASSOCIATION_RETAIN)
         }
     }
     
     var qt_indexPath:IndexPath?{
         get {
-            guard let _indexPath = objc_getAssociatedObject(self, UICollectionViewCellRuntimeKey.KEY_indexPath) as? IndexPath else {
+            guard let _indexPath = objc_getAssociatedObject(self, UICollectionViewCellRuntimeKey.KEY_indexPath!) as? IndexPath else {
                 return nil
             }
             return _indexPath
         }
         set {
-            objc_setAssociatedObject(self, UICollectionViewCellRuntimeKey.KEY_indexPath, newValue, .OBJC_ASSOCIATION_RETAIN)
+            objc_setAssociatedObject(self, UICollectionViewCellRuntimeKey.KEY_indexPath!, newValue, .OBJC_ASSOCIATION_RETAIN)
         }
     }
 }
 
 fileprivate struct UICollectionViewCellRuntimeKey {
-    static let KEY_data = UnsafeRawPointer(bitPattern: "KEY_data".hashValue)!
-    static let KEY_indexPath = UnsafeRawPointer(bitPattern: "KEY_indexPath".hashValue)!
+    static let KEY_data = UnsafeRawPointer(bitPattern: "KEY_data".hashValue)
+    static let KEY_indexPath = UnsafeRawPointer(bitPattern: "KEY_indexPath".hashValue)
 }
 
-class QtGenericGridView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
+class QtGenericGridView: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     var collectionView:UICollectionView!
     private var layout:UICollectionViewFlowLayout!
     private let reuseId:String! = "\(arc4random())"
     private var _scrollEndCallback:((CGPoint)->())?
     private var _buildCellCallback:((UICollectionViewCell)->())?
+    private var _itemSizeCallback:((Any,IndexPath)->CGSize)?
     private var _selectCellCallback:((UICollectionViewCell)->())?
 
     var cellClass:AnyClass! = UICollectionViewCell.self
@@ -91,7 +92,9 @@ class QtGenericGridView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     var isScrollEnabled:Bool{
         set{
             collectionView.isScrollEnabled = newValue
-            collectionView.alwaysBounceVertical = newValue
+            if(layout.scrollDirection == .vertical){
+                collectionView.alwaysBounceVertical = newValue
+            }
         }
         get{
             return collectionView.isScrollEnabled
@@ -129,6 +132,15 @@ class QtGenericGridView: UIView, UICollectionViewDelegate, UICollectionViewDataS
             return _buildCellCallback
         }
     }
+    var itemSizeCallback:((Any,IndexPath)->CGSize)?{
+        set{
+            _itemSizeCallback = newValue
+        }
+        get{
+            return _itemSizeCallback
+        }
+    }
+    
     var selectCellCallback:((UICollectionViewCell)->())?{
         set{
             _selectCellCallback = newValue
@@ -261,10 +273,17 @@ class QtGenericGridView: UIView, UICollectionViewDelegate, UICollectionViewDataS
         return dataList!.count
     }
     
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
+        if(_itemSizeCallback != nil){
+            return _itemSizeCallback!(dataList![indexPath.item], indexPath)
+        }
+        return layout.itemSize
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseId, for: indexPath)
         cell.qt_indexPath = indexPath
-        cell.qt_data = dataList![indexPath.row]
+        cell.qt_data = dataList![indexPath.item]
         if(self.buildCellCallback != nil){
             self.buildCellCallback!(cell)
         }
@@ -272,7 +291,7 @@ class QtGenericGridView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseId, for: indexPath)
+        let cell = collectionView.cellForItem(at: indexPath)!
         if(self.selectCellCallback != nil){
             self.selectCellCallback!(cell)
         }

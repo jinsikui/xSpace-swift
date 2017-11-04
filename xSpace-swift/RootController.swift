@@ -35,7 +35,7 @@ class RootController: UIViewController {
         }
         //
         let x = CGFloat(0.5*(QtDevice.screenWidth - 150))
-        var btn = QtViewFactory.button(text: "QtWebView", font: QtFont.regularPF(15), textColor:QtColor.blue, bgColor:QtColor.white, cornerRadius: 2, borderColor: QtColor.blue)
+        var btn = QtViewFactory.button(text: "WebView", font: QtFont.regularPF(15), textColor:QtColor.blue, bgColor:QtColor.white, cornerRadius: 2, borderColor: QtColor.blue)
         btn.addTarget(self, action: #selector(self.actionQtWebView), for: .touchUpInside)
         btn.frame = CGRect(x: x, y: 50, width: 150, height: 50)
         scroll.addSubview(btn)
@@ -70,12 +70,21 @@ class RootController: UIViewController {
         btn.frame = CGRect(x: x, y: 470, width: 150, height: 50)
         scroll.addSubview(btn)
         //
-        btn = QtViewFactory.button(text: "QtNotice", font: QtFont.regularPF(15), textColor:QtColor.blue, bgColor:QtColor.white, cornerRadius: 2, borderColor: QtColor.blue)
+        btn = QtViewFactory.button(text: "Notice", font: QtFont.regularPF(15), textColor:QtColor.blue, bgColor:QtColor.white, cornerRadius: 2, borderColor: QtColor.blue)
         btn.addTarget(self, action: #selector(actionNotice), for: .touchUpInside)
         btn.frame = CGRect(x: x, y: 540, width: 150, height: 50)
         scroll.addSubview(btn)
+        //
+        btn = QtViewFactory.button(text: "GridView", font: QtFont.regularPF(15), textColor:QtColor.blue, bgColor:QtColor.white, cornerRadius: 2, borderColor: QtColor.blue)
+        btn.addTarget(self, action: #selector(actionGridView), for: .touchUpInside)
+        btn.frame = CGRect(x: x, y: 610, width: 150, height: 50)
+        scroll.addSubview(btn)
         
-        scroll.contentSize = CGSize(width:0, height:610)
+        scroll.contentSize = CGSize(width:0, height:710)
+    }
+    
+    @objc func actionGridView(){
+        self.navigationController!.pushViewController(GridViewController(), animated: true)
     }
     
     @objc func actionNotice(){
