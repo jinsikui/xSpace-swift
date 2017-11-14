@@ -12,6 +12,7 @@ target 'xSpace-swift' do
   pod 'YYText'
   pod 'AlamofireImage'
   pod 'PKHUD'
+  pod 'KVOController'
 end
 
 post_install do |installer|

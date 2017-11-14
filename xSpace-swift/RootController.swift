@@ -21,7 +21,7 @@ class RootController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         timer = DispatchSource.makeTimerSource(queue: .main)
-        timer.schedule(deadline: .now(), repeating: .seconds(1))
+        timer.scheduleRepeating(deadline: .now(), interval: .seconds(1))
         timer.setEventHandler {
             self.timerTicking()
         }
@@ -79,8 +79,17 @@ class RootController: UIViewController {
         btn.addTarget(self, action: #selector(actionGridView), for: .touchUpInside)
         btn.frame = CGRect(x: x, y: 610, width: 150, height: 50)
         scroll.addSubview(btn)
+        //
+        btn = QtViewFactory.button(text: "KVO", font: QtFont.regularPF(15), textColor:QtColor.blue, bgColor:QtColor.white, cornerRadius: 2, borderColor: QtColor.blue)
+        btn.addTarget(self, action: #selector(actionKVO), for: .touchUpInside)
+        btn.frame = CGRect(x: x, y: 680, width: 150, height: 50)
+        scroll.addSubview(btn)
         
-        scroll.contentSize = CGSize(width:0, height:710)
+        scroll.contentSize = CGSize(width:0, height:780)
+    }
+    
+    @objc func actionKVO(){
+        self.navigationController!.pushViewController(KVOTestController(), animated: true)
     }
     
     @objc func actionGridView(){

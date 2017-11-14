@@ -28,31 +28,31 @@ class QtNotice : NSObject {
     
     static let shared = QtNotice()
     
-    static let kAppFinishLaunching = "kAppFinishLaunching"
-    static let kAppBecomeActive = "kAppBecomeActive"
-    static let kAppEnterBackground = "kAppEnterBackground"
-    static let kAppWillTerminate = "kAppWillTerminate"
-    static let kAppWillResignActive = "kAppWillResignActive"
-    static let kTimerTicking = "kTimerTicking"
-    static let kSignIn = "kSignIn"
+    let kAppFinishLaunching = "QtNotice.AppFinishLaunching"
+    let kAppBecomeActive = "QtNotice.AppBecomeActive"
+    let kAppEnterBackground = "QtNotice.AppEnterBackground"
+    let kAppWillTerminate = "QtNotice.AppWillTerminate"
+    let kAppWillResignActive = "QtNotice.AppWillResignActive"
+    let kTimerTicking = "QtNotice.TimerTicking"
+    let kSignIn = "QtNotice.SignIn"
+    var customEventNames = Array<String>()
     
     private var actionDic:Dictionary<String, NSMapTable<AnyObject, ObjectWrapper<(Any?)->()>>>!
     private var bindQueue:DispatchQueue!
-    private var timer: DispatchSourceTimer!
+    private var timer: QtTimer!
     private var timerTable:NSMapTable<AnyObject, QtTimerContext>!
-    private var isTimerRunning = false
     private var hasRegisttered = false
+    private let _customEventNameKey = "QtNotice.customEventNameKey"
+    private let _customEventUserInfoKey = "QtNotice.customEventUserInfoKey"
     
     private override init(){
         super.init()
         actionDic = Dictionary<String, NSMapTable<AnyObject, ObjectWrapper<(Any?)->()>>>()
         bindQueue = DispatchQueue(label:"QtNotice.bindQueue", attributes:.concurrent)
         timerTable = NSMapTable<AnyObject, QtTimerContext>(keyOptions: NSPointerFunctions.Options.weakMemory, valueOptions: NSPointerFunctions.Options.strongMemory)
-        timer = DispatchSource.makeTimerSource(queue: bindQueue)
-        timer.schedule(deadline: .now(), repeating: .seconds(1))
-        timer.setEventHandler {
+        timer = QtTimer(interval: .seconds(1), queue: bindQueue, action: {[unowned self] in
             self.timerTicking()
-        }
+        })
         registerNotices()
     }
     
@@ -74,7 +74,7 @@ class QtNotice : NSObject {
         NotificationCenter.default.addObserver(self, selector: #selector(appWillResignActive), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(appWillResignActive), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
         //
-        NotificationCenter.default.addObserver(self, selector: #selector(fireSignIn), name:NSNotification.Name(rawValue: QtNotice.kSignIn), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(fireSignIn), name:NSNotification.Name(rawValue: self.kSignIn), object: nil)
     }
     
     private func setAction(_ actionKey:String, lifeIndicator:AnyObject, action:@escaping (Any?)->()){
@@ -100,26 +100,18 @@ class QtNotice : NSObject {
     }
     
     private func resumeTimer(){
-        if(isTimerRunning){
-            return
-        }
-        isTimerRunning = true
-        timer.resume()
+        timer.start()
     }
     
     private func suspendTimer(){
-        if(!isTimerRunning){
-            return
-        }
-        isTimerRunning = false
-        timer.suspend()
+        timer.stop()
     }
     
     //MARK: - Notification handlers
     
     @objc func appFinishLaunching(notification: NSNotification){
         bindQueue.async {
-            self.runAction(key: QtNotice.kAppFinishLaunching, param: notification.userInfo)
+            self.runAction(key: self.kAppFinishLaunching, param: notification.userInfo)
         }
     }
     
@@ -127,43 +119,51 @@ class QtNotice : NSObject {
         bindQueue.async {
             self.resumeTimer()
             self.timerTicking()
-            self.runAction(key: QtNotice.kAppBecomeActive, param: notification.userInfo)
+            self.runAction(key: self.kAppBecomeActive, param: notification.userInfo)
         }
     }
     
     @objc func appWillResignActive(notification: NSNotification){
         bindQueue.async {
             self.suspendTimer()
-            self.runAction(key: QtNotice.kAppWillResignActive, param: notification.userInfo)
+            self.runAction(key: self.kAppWillResignActive, param: notification.userInfo)
         }
     }
     
     @objc func appEnterBackground(notification: NSNotification){
         bindQueue.async {
             self.suspendTimer()
-            self.runAction(key: QtNotice.kAppEnterBackground, param: notification.userInfo)
+            self.runAction(key: self.kAppEnterBackground, param: notification.userInfo)
         }
     }
     
     @objc func appWillTerminate(notification: NSNotification){
         bindQueue.async {
             self.suspendTimer()
-            self.runAction(key: QtNotice.kAppWillTerminate, param: notification.userInfo)
+            self.runAction(key: self.kAppWillTerminate, param: notification.userInfo)
         }
     }
     
     func timerTicking(){
-        let mapTable = actionDic[QtNotice.kTimerTicking];
+        let mapTable = actionDic[self.kTimerTicking];
         if (mapTable == nil || mapTable!.count <= 0) {
             self.suspendTimer()
             return;
         }
-        self.runAction(key: QtNotice.kTimerTicking, param: nil)
+        self.runAction(key: self.kTimerTicking, param: nil)
     }
     
     @objc func fireSignIn(notification: NSNotification){
         bindQueue.async {
-            self.runAction(key: QtNotice.kSignIn, param: notification.userInfo)
+            self.runAction(key: self.kSignIn, param: notification.userInfo)
+        }
+    }
+    
+    @objc func customEventFired(notification:NSNotification){
+        bindQueue.async {
+            let eventName = notification.userInfo![self._customEventNameKey] as! String
+            let userInfo = notification.userInfo![self._customEventUserInfoKey]
+            self.runAction(key: eventName, param: userInfo)
         }
     }
     
@@ -171,37 +171,37 @@ class QtNotice : NSObject {
     
     func registerAppFinishLaunching(lifeIndicator:AnyObject, action:@escaping (Any?)->()){
         bindQueue.async(execute: DispatchWorkItem(flags: .barrier) {
-            self.setAction(QtNotice.kAppFinishLaunching, lifeIndicator: lifeIndicator, action: action)
+            self.setAction(self.kAppFinishLaunching, lifeIndicator: lifeIndicator, action: action)
         })
     }
     
     func registerAppBecomeActive(lifeIndicator:AnyObject, action:@escaping (Any?)->()){
         bindQueue.async(execute: DispatchWorkItem(flags: .barrier) {
-            self.setAction(QtNotice.kAppBecomeActive, lifeIndicator: lifeIndicator, action: action)
+            self.setAction(self.kAppBecomeActive, lifeIndicator: lifeIndicator, action: action)
         })
     }
     
     func registerAppWillResignActive(lifeIndicator:AnyObject, action:@escaping (Any?)->()){
         bindQueue.async(execute: DispatchWorkItem(flags: .barrier) {
-            self.setAction(QtNotice.kAppWillResignActive, lifeIndicator: lifeIndicator, action: action)
+            self.setAction(self.kAppWillResignActive, lifeIndicator: lifeIndicator, action: action)
         })
     }
     
     func registerAppEnterBackground(lifeIndicator:AnyObject, action:@escaping (Any?)->()){
         bindQueue.async(execute: DispatchWorkItem(flags: .barrier) {
-            self.setAction(QtNotice.kAppEnterBackground, lifeIndicator: lifeIndicator, action: action)
+            self.setAction(self.kAppEnterBackground, lifeIndicator: lifeIndicator, action: action)
         })
     }
     
     func registerAppWillTerminate(lifeIndicator:AnyObject, action:@escaping (Any?)->()){
         bindQueue.async(execute: DispatchWorkItem(flags: .barrier) {
-            self.setAction(QtNotice.kAppWillTerminate, lifeIndicator: lifeIndicator, action: action)
+            self.setAction(self.kAppWillTerminate, lifeIndicator: lifeIndicator, action: action)
         })
     }
     
     private func registerTimerTicking(lifeIndicator:AnyObject, action:@escaping (Any?)->()) {
         bindQueue.async(execute: DispatchWorkItem(flags: .barrier) {
-            self.setAction(QtNotice.kTimerTicking, lifeIndicator: lifeIndicator, action: action)
+            self.setAction(self.kTimerTicking, lifeIndicator: lifeIndicator, action: action)
             self.resumeTimer()
         })
     }
@@ -222,13 +222,35 @@ class QtNotice : NSObject {
     
     func registerSignIn(lifeIndicator:AnyObject, action:@escaping (Any?)->()){
         bindQueue.async(execute: DispatchWorkItem(flags: .barrier) {
-            self.setAction(QtNotice.kSignIn, lifeIndicator: lifeIndicator, action: action)
+            self.setAction(self.kSignIn, lifeIndicator: lifeIndicator, action: action)
+        })
+    }
+    
+    func registerEvent(_ eventName:String, lifeIndicator:AnyObject, action:@escaping (Any?)->()){
+        bindQueue.async(execute: DispatchWorkItem(flags: .barrier) {
+            self.setAction(eventName, lifeIndicator: lifeIndicator, action: action)
         })
     }
     
     //MARK: - Post Notice
     
     func postSignIn(){
-        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: QtNotice.kSignIn), object: nil, userInfo: nil))
+        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: self.kSignIn), object: nil, userInfo: nil))
+    }
+    
+    
+    func postEvent(_ eventName:String, userInfo:Dictionary<String, Any>?){
+        bindQueue.async(execute: DispatchWorkItem(flags: .barrier) {
+            if(!self.customEventNames.contains(eventName)){
+                self.customEventNames.append(eventName)
+                NotificationCenter.default.addObserver(self, selector: #selector(self.customEventFired(notification:)), name: Notification.Name(rawValue: eventName), object: nil)
+            }
+            var userInfoWrapper = Dictionary<String, Any>()
+            userInfoWrapper[self._customEventNameKey] = eventName
+            if(userInfo != nil){
+                userInfoWrapper[self._customEventUserInfoKey] = userInfo!
+            }
+            NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: eventName), object: nil, userInfo: userInfoWrapper))
+        })
     }
 }

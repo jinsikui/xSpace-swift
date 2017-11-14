@@ -16,6 +16,9 @@ class QtCornerView: UIView {
     
     var corners:UIRectCorner! = [.topLeft, .topRight, .bottomLeft, .bottomRight]
     var cornerRadius:CGFloat! = 10
+    var borderWidth:CGFloat! = 0
+    var borderColor:UIColor! = UIColor.clear
+    var borderLayer:CAShapeLayer?
     
     init(corners:UIRectCorner, cornerRadius:CGFloat){
         super.init(frame: CGRect.zero)
@@ -36,5 +39,17 @@ class QtCornerView: UIView {
         let shape = CAShapeLayer()
         shape.path = maskPath.cgPath
         self.layer.mask = shape
+        if(borderLayer != nil){
+            borderLayer!.removeFromSuperlayer()
+        }
+        if(borderWidth > 0 && !borderColor.isEqual(UIColor.clear)){
+            let borderLayer = CAShapeLayer()
+            self.borderLayer = borderLayer
+            borderLayer.path = maskPath.cgPath
+            borderLayer.fillColor = nil
+            borderLayer.strokeColor = borderColor.cgColor
+            borderLayer.lineWidth = borderWidth
+            self.layer.addSublayer(borderLayer)
+        }
     }
 }

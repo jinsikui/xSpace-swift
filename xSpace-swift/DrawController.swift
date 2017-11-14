@@ -18,6 +18,7 @@ class DrawController: QtBaseViewController {
     var label2:UILabel!
     var count:Int = 1
     var width:CGFloat! = 100
+    var borderColor:UIColor = QtColor.clear
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -44,6 +45,8 @@ class DrawController: QtBaseViewController {
         //
         panel = QtCornerView(corners:[UIRectCorner.topRight, UIRectCorner.bottomRight], cornerRadius:10)
         panel.backgroundColor = QtColor.green
+        panel.borderColor = QtColor.red
+        panel.borderWidth = 2
         label = QtViewFactory.label(font: QtFont.regularPF(12), title: "\(count)", color: QtColor.black)
         panel.addSubview(label)
         label.snp.makeConstraints { (make) in
@@ -89,7 +92,14 @@ class DrawController: QtBaseViewController {
     
     @objc func actionChangeShape(){
         //模拟view尺寸改变
+        
         width = width == 100 ? 200 : 100
+        if(panel.borderColor.isEqual(QtColor.red)){
+            panel.borderColor = QtColor.black
+        }
+        else{
+            panel.borderColor = QtColor.red
+        }
         panel.snp.remakeConstraints { (make) in
             make.top.equalTo(btn.snp.bottom).offset(30)
             make.centerX.equalTo(btn.snp.centerX)

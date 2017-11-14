@@ -47,13 +47,13 @@ extension NSMutableAttributedString{
     }
     
     @discardableResult func qt_appendStr(_ str:String, foreColor:UIColor, font:UIFont) -> NSMutableAttributedString{
-        let attr = NSMutableAttributedString(string: str, attributes: [NSAttributedStringKey.foregroundColor: foreColor, NSAttributedStringKey.font: font])
+        let attr = NSMutableAttributedString(string: str, attributes: [NSForegroundColorAttributeName: foreColor, NSFontAttributeName: font])
         self.append(attr)
         return self
     }
     
     static func qt_attrStrWith(str:String, foreColor:UIColor, font:UIFont) -> NSMutableAttributedString{
-        let attr = NSMutableAttributedString(string: str, attributes: [NSAttributedStringKey.foregroundColor: foreColor, NSAttributedStringKey.font: font])
+        let attr = NSMutableAttributedString(string: str, attributes: [NSForegroundColorAttributeName: foreColor, NSFontAttributeName: font])
         return attr
     }
 }

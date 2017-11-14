@@ -39,7 +39,7 @@ class QtBaseViewController: UIViewController {
             //设置导航栏不透明
             self.navigationController!.navigationBar.isTranslucent = false
             //title样式
-            self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: QtFont.regularPF(17), NSAttributedStringKey.foregroundColor:QtColor.colorFromRGB(rgbValue: 0x333333)]
+            self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: QtFont.regularPF(17), NSForegroundColorAttributeName:QtColor.colorFromRGB(rgbValue: 0x333333)]
             //返回和完成按钮颜色
             self.navigationController!.navigationBar.tintColor = QtColor.green//QtColor.colorFromRGBA(rgbValue: 0, alpha: 0.6)
         }

@@ -28,7 +28,7 @@ class QtFont: NSObject {
             return UIFont(name: "PingFangSC-Light", size: size)!
         }
         else if(systemVersion >= 8.19 ){
-            return UIFont.systemFont(ofSize: size, weight: UIFont.Weight.light)
+            return UIFont.systemFont(ofSize: size, weight: UIFontWeightLight)
         }
         else{
             return UIFont(name:"HelveticaNeue-Ligh", size:size)!
@@ -40,7 +40,7 @@ class QtFont: NSObject {
             return UIFont(name: "PingFangSC-Regular", size: size)!
         }
         else if(systemVersion >= 8.19 ){
-            return UIFont.systemFont(ofSize: size, weight: UIFont.Weight.regular)
+            return UIFont.systemFont(ofSize: size, weight: UIFontWeightRegular)
         }
         else{
             return UIFont(name:"HelveticaNeue", size:size)!
@@ -52,7 +52,7 @@ class QtFont: NSObject {
             return UIFont(name: "PingFangSC-Medium", size: size)!
         }
         else if(systemVersion >= 8.19 ){
-            return UIFont.systemFont(ofSize: size, weight: UIFont.Weight.medium)
+            return UIFont.systemFont(ofSize: size, weight: UIFontWeightMedium)
         }
         else{
             return UIFont(name:"HelveticaNeue-Medium", size:size)!
@@ -64,7 +64,7 @@ class QtFont: NSObject {
             return UIFont(name: "PingFangSC-Semibold", size: size)!
         }
         else if(systemVersion >= 8.19 ){
-            return UIFont.systemFont(ofSize: size, weight: UIFont.Weight.semibold)
+            return UIFont.systemFont(ofSize: size, weight: UIFontWeightSemibold)
         }
         else{
             return UIFont(name:"HelveticaNeue-Bold", size:size)!
@@ -76,7 +76,7 @@ class QtFont: NSObject {
      */
     static func bold(_ size:CGFloat) -> UIFont{
         if(systemVersion >= 9.0){
-            return UIFont.systemFont(ofSize: size, weight: UIFont.Weight.medium)
+            return UIFont.systemFont(ofSize: size, weight: UIFontWeightMedium)
         }
         else{
             return UIFont(name:"HelveticaNeue-Medium", size:size)!
@@ -85,7 +85,7 @@ class QtFont: NSObject {
     
     static func regular(_ size:CGFloat) -> UIFont{
         if(systemVersion >= 9.0){
-            return UIFont.systemFont(ofSize: size, weight: UIFont.Weight.regular)
+            return UIFont.systemFont(ofSize: size, weight: UIFontWeightRegular)
         }
         else{
             return UIFont(name:"HelveticaNeue-Light", size:size)!
@@ -94,7 +94,7 @@ class QtFont: NSObject {
     
     static func light(_ size:CGFloat) -> UIFont{
         if(systemVersion >= 9.0){
-            return UIFont.systemFont(ofSize: size, weight: UIFont.Weight.light)
+            return UIFont.systemFont(ofSize: size, weight: UIFontWeightLight)
         }
         else{
             return UIFont(name:"HelveticaNeue-Thin", size:size)!

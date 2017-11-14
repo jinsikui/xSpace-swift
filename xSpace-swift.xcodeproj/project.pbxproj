@@ -15,6 +15,8 @@
 		639296B61FAC8105008E0935 /* ObjectWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639296B51FAC8105008E0935 /* ObjectWrapper.swift */; };
 		639296B91FACB3BD008E0935 /* QtNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639296B81FACB3BD008E0935 /* QtNotice.swift */; };
 		63BD76231F9853F4004D25D4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD76221F9853F4004D25D4 /* Extensions.swift */; };
+		63BF0DCF1FBAC75500196680 /* QtTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF0DCE1FBAC75500196680 /* QtTimer.swift */; };
+		63BF0DD51FBAE95700196680 /* KVOTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF0DD41FBAE95700196680 /* KVOTestController.swift */; };
 		63E28CBE1FA8626500F22C44 /* QtViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28CBD1FA8626500F22C44 /* QtViewFactory.swift */; };
 		63E28CC41FA862D700F22C44 /* QtGenericGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28CBF1FA862D700F22C44 /* QtGenericGridView.swift */; };
 		63E28CC51FA862D700F22C44 /* QtDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28CC01FA862D700F22C44 /* QtDevice.swift */; };
@@ -45,9 +47,12 @@
 		6302FECB1FAD844400F978DA /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
 		6387BD2A1F9F014D00D5BD66 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		6387BD2C1F9F01C600D5BD66 /* AViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AViewController.swift; sourceTree = "<group>"; };
+		6391A8731FBAEE9600431D72 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		639296B51FAC8105008E0935 /* ObjectWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectWrapper.swift; sourceTree = "<group>"; };
 		639296B81FACB3BD008E0935 /* QtNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtNotice.swift; sourceTree = "<group>"; };
 		63BD76221F9853F4004D25D4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		63BF0DCE1FBAC75500196680 /* QtTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QtTimer.swift; sourceTree = "<group>"; };
+		63BF0DD41FBAE95700196680 /* KVOTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVOTestController.swift; sourceTree = "<group>"; };
 		63E28CBD1FA8626500F22C44 /* QtViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtViewFactory.swift; sourceTree = "<group>"; };
 		63E28CBF1FA862D700F22C44 /* QtGenericGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtGenericGridView.swift; sourceTree = "<group>"; };
 		63E28CC01FA862D700F22C44 /* QtDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtDevice.swift; sourceTree = "<group>"; };
@@ -146,8 +151,17 @@
 				63E28CBD1FA8626500F22C44 /* QtViewFactory.swift */,
 				63BD76221F9853F4004D25D4 /* Extensions.swift */,
 				639296B51FAC8105008E0935 /* ObjectWrapper.swift */,
+				63BF0DCE1FBAC75500196680 /* QtTimer.swift */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		63BF0DD31FBAE91A00196680 /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				63BF0DD41FBAE95700196680 /* KVOTestController.swift */,
+			);
+			name = KVO;
 			sourceTree = "<group>";
 		};
 		63E28CC91FA8676400F22C44 /* YYText */ = {
@@ -188,6 +202,7 @@
 		63EE25261F8CBFC400E1A36A /* xSpace-swift */ = {
 			isa = PBXGroup;
 			children = (
+				63BF0DD31FBAE91A00196680 /* KVO */,
 				6302FECA1FAD840D00F978DA /* QtGenericGridView */,
 				6302FEC71FAD499D00F978DA /* QtNotice */,
 				63E3B5B71FAABEF20039FE5D /* Draw */,
@@ -201,6 +216,7 @@
 				63EE25301F8CBFC400E1A36A /* LaunchScreen.storyboard */,
 				63EE25331F8CBFC400E1A36A /* Info.plist */,
 				63F1F8F01F8E28E900CA8466 /* RootController.swift */,
+				6391A8731FBAEE9600431D72 /* Bridging-Header.h */,
 			);
 			path = "xSpace-swift";
 			sourceTree = "<group>";
@@ -330,6 +346,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-xSpace-swift/Pods-xSpace-swift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -343,6 +360,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -367,9 +385,11 @@
 				639296B61FAC8105008E0935 /* ObjectWrapper.swift in Sources */,
 				63E28CC81FA862D700F22C44 /* QtFont.swift in Sources */,
 				63BD76231F9853F4004D25D4 /* Extensions.swift in Sources */,
+				63BF0DD51FBAE95700196680 /* KVOTestController.swift in Sources */,
 				6387BD2D1F9F01C600D5BD66 /* AViewController.swift in Sources */,
 				63E28CC61FA862D700F22C44 /* QtFullscreenPopGesture.swift in Sources */,
 				63E3B5B91FAABFD80039FE5D /* QtWebView.swift in Sources */,
+				63BF0DCF1FBAC75500196680 /* QtTimer.swift in Sources */,
 				6302FECC1FAD844400F978DA /* GridViewController.swift in Sources */,
 				63E28CCB1FA8679C00F22C44 /* YYTextController.swift in Sources */,
 				63E28CC41FA862D700F22C44 /* QtGenericGridView.swift in Sources */,
@@ -532,7 +552,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xspace.xSpace-swift.xSpace-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "xSpace-swift/Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -548,7 +569,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xspace.xSpace-swift.xSpace-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "xSpace-swift/Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
