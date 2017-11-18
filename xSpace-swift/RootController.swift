@@ -136,7 +136,7 @@ class RootController: UIViewController {
     }
     
     @objc func actionHexColor(){
-        let color = QtColor.colorWithHexString("#FF0000")
+        let color = QtColor.fromHexString("#FF0000")
         self.view.backgroundColor = color
     }
     

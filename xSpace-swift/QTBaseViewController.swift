@@ -39,9 +39,9 @@ class QtBaseViewController: UIViewController {
             //设置导航栏不透明
             self.navigationController!.navigationBar.isTranslucent = false
             //title样式
-            self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: QtFont.regularPF(17), NSForegroundColorAttributeName:QtColor.colorFromRGB(rgbValue: 0x333333)]
+            self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: QtFont.regularPF(17), NSForegroundColorAttributeName:QtColor.fromRGB(0x333333)]
             //返回和完成按钮颜色
-            self.navigationController!.navigationBar.tintColor = QtColor.green//QtColor.colorFromRGBA(rgbValue: 0, alpha: 0.6)
+            self.navigationController!.navigationBar.tintColor = QtColor.green//QtColor.fromRGBA(0, alpha: 0.6)
         }
         self.setBarBtnItem(position:.left, imageName: "backBtn", title: nil, target: self, selector: #selector(actionBack))
     }
@@ -55,7 +55,7 @@ class QtBaseViewController: UIViewController {
         }
         else if(title != nil){
             btn.setTitle(title!, for: .normal)
-            btn.setTitleColor(QtColor.colorFromRGBA(rgbValue: 0, alpha: 0.6), for: .normal)
+            btn.setTitleColor(QtColor.fromRGBA(0, alpha: 0.6), for: .normal)
             btn.titleLabel!.font = QtFont.regularPF(14)
             btn.frame = CGRect(x:0, y:0, width:14*title!.count, height:14)
         }

@@ -110,7 +110,7 @@ class KVOTestController: QtBaseViewController {
         
         let tableView = QtGenericGridView(cellClass: ClockCell.self)
         self.tableView = tableView
-        tableView.backgroundColor = QtColor.colorFromRGB(rgbValue: 0xEEEEEE)
+        tableView.backgroundColor = QtColor.fromRGB(0xEEEEEE)
         tableView.scrollDirection = .vertical
         tableView.isScrollEnabled = true
         tableView.itemSize = CGSize(width:QtDevice.screenWidth, height:50)

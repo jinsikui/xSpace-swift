@@ -17,7 +17,7 @@ class YYTextController: QtBaseViewController {
         self.view.backgroundColor = QtColor.white
         
         //
-        let nameLabel = QtViewFactory.label(font: QtFont.regularPF(16), title: "aaa", color: QtColor.colorFromRGB(rgbValue: 0))
+        let nameLabel = QtViewFactory.label(font: QtFont.regularPF(16), title: "aaa", color: QtColor.fromRGB(0))
         nameLabel.numberOfLines = 1
         nameLabel.sizeToFit()
         self.view.addSubview(nameLabel)

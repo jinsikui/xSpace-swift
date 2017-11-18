@@ -9,12 +9,12 @@
 import UIKit
 
 class QtColor: UIColor {
-
-    static func colorFromRGB(rgbValue: UInt) -> UIColor {
-        return self.colorFromRGBA(rgbValue: rgbValue, alpha: 1)
+    
+    static func fromRGB(_ rgbValue: UInt) -> UIColor {
+        return self.fromRGBA(rgbValue, alpha: 1)
     }
     
-    static func colorFromRGBA(rgbValue: UInt, alpha: Float) -> UIColor {
+    static func fromRGBA(_ rgbValue: UInt, alpha: Float) -> UIColor {
         return UIColor(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
             green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
@@ -23,14 +23,14 @@ class QtColor: UIColor {
         )
     }
     
-    static func colorWithHexString(_ hexString:String) -> UIColor{
-        return self.colorWithHexString(hexString, alpha:1.0)
+    static func fromHexString(_ hexString:String) -> UIColor{
+        return self.fromHexString(hexString, alpha:1.0)
     }
     
-    static func colorWithHexString(_ hexString:String, alpha:CGFloat) -> UIColor{
+    static func fromHexString(_ hexString:String, alpha:CGFloat) -> UIColor{
         var str = hexString
         if(str[str.startIndex] == "#"){
-            str = String(str[str.index(after: str.startIndex)..<str.endIndex])
+            str = str[str.index(after: str.startIndex)..<str.endIndex]
         }
         // check for string length
         assert(6 == str.count || 3 == str.count);
@@ -47,17 +47,17 @@ class QtColor: UIColor {
         let greenInt = Int(self.hexValueToUInt(greenHex))
         let blueHex = "0x\(str[str.index(str.startIndex, offsetBy:4)..<str.endIndex])"
         let blueInt = Int(self.hexValueToUInt(blueHex))
-        return self.colorWith8Bit(red:redInt, green:greenInt, blue:blueInt, alpha:alpha)
+        return self.from8Bit(red:redInt, green:greenInt, blue:blueInt, alpha:alpha)
     }
     
-    static func colorWith8Bit(red:Int, green:Int, blue:Int) -> UIColor{
-        return self.colorWith8Bit(red:red, green:green, blue:blue, alpha:1.0)
+    static func from8Bit(red:Int, green:Int, blue:Int) -> UIColor{
+        return self.from8Bit(red:red, green:green, blue:blue, alpha:1.0)
     }
     
-    static func colorWith8Bit(red:Int, green:Int, blue:Int, alpha:CGFloat) -> UIColor {
+    static func from8Bit(red:Int, green:Int, blue:Int, alpha:CGFloat) -> UIColor {
         return UIColor(red: CGFloat(red)/255, green: CGFloat(green)/255, blue: CGFloat(blue)/255, alpha: alpha)
     }
-
+    
     static func hexValueToUInt(_ hexValue:String) -> UInt32{
         var value:UInt32 = 0
         let s = Scanner(string: hexValue)
