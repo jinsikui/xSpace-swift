@@ -84,8 +84,26 @@ class RootController: UIViewController {
         btn.addTarget(self, action: #selector(actionKVO), for: .touchUpInside)
         btn.frame = CGRect(x: x, y: 680, width: 150, height: 50)
         scroll.addSubview(btn)
-        
-        scroll.contentSize = CGSize(width:0, height:780)
+        //
+        btn = QtViewFactory.button(text: "AgoraAudient", font: QtFont.regularPF(15), textColor:QtColor.blue, bgColor:QtColor.white, cornerRadius: 2, borderColor: QtColor.blue)
+        btn.addTarget(self, action: #selector(actionAgoraAudient), for: .touchUpInside)
+        btn.frame = CGRect(x: x, y: 750, width: 150, height: 50)
+        scroll.addSubview(btn)
+        //
+        btn = QtViewFactory.button(text: "AgoraBroadcaster", font: QtFont.regularPF(15), textColor:QtColor.blue, bgColor:QtColor.white, cornerRadius: 2, borderColor: QtColor.blue)
+        btn.addTarget(self, action: #selector(actionAgoraBroadcaster), for: .touchUpInside)
+        btn.frame = CGRect(x: x, y: 820, width: 150, height: 50)
+        scroll.addSubview(btn)
+        //
+        scroll.contentSize = CGSize(width:0, height:970)
+    }
+    
+    @objc func actionAgoraBroadcaster(){
+        self.navigationController!.pushViewController(AgoraBroadcasterController(), animated: true)
+    }
+    
+    @objc func actionAgoraAudient(){
+        self.navigationController!.pushViewController(AgoraAudientController(), animated: true)
     }
     
     @objc func actionKVO(){

@@ -8,6 +8,7 @@
 
 import UIKit
 import KVOController
+import PKHUD
 
 class ClockModel:NSObject{
     dynamic var timeCount:Int = 0
@@ -52,11 +53,22 @@ class ClockCell:UICollectionViewCell{
 }
 
 class KVOTestController: QtBaseViewController {
-    
+    dynamic var isOK = false
+    dynamic var arr = [1,2]
+    dynamic var arr2 = [ClockModel(1),ClockModel(2)]
     var clockList:Array<ClockModel> = Array<ClockModel>()
     var timer:QtTimer!
     let labelTag = 1000
     var tableView:QtGenericGridView!
+    private var _count:Int = 0
+    dynamic var count:Int{
+        set{
+            _count = newValue
+        }
+        get{
+            return _count
+        }
+    }
     
     deinit{
         print("====== KVOTestController deinit ======")
@@ -64,6 +76,19 @@ class KVOTestController: QtBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.kvoController.observe(self, keyPath: "count", options: [.new]) { (observer, object, change) in
+            print("=== count change: \(self.count) ===")
+        }
+        self.kvoController.observe(self, keyPath: "isOK", options: [.initial, .new]) { (observer, object, change) in
+            print("=== \(self.isOK) ===")
+        }
+        self.kvoController.observe(self, keyPath: "arr", options: [.initial, .new]) { (observer, object, change) in
+            print("=== \(self.arr.count) ===")
+        }
+        self.kvoController.observe(self, keyPath: "arr2", options: [.initial, .new]) { (observer, object, change) in
+            print("=== \(self.arr2.count) ===")
+        }
         timer = QtTimer(interval: .seconds(1)) {[unowned self] in
             for clock in self.clockList{
                 clock.timeCount += 1
@@ -73,8 +98,8 @@ class KVOTestController: QtBaseViewController {
         for i in 1...10{
             clockList.append(ClockModel(i))
         }
-        let btn = QtViewFactory.button(text: "reload", font: QtFont.regularPF(14), textColor: QtColor.black, borderColor:QtColor.black, borderWidth:0.5)
-        btn.addTarget(self, action: #selector(actionReload), for: .touchUpInside)
+        let btn = QtViewFactory.button(text: "change", font: QtFont.regularPF(14), textColor: QtColor.black, borderColor:QtColor.black, borderWidth:0.5)
+        btn.addTarget(self, action: #selector(actionChange), for: .touchUpInside)
         self.view.addSubview(btn)
         btn.snp.makeConstraints { (make) in
             make.top.equalTo(50)
@@ -101,7 +126,15 @@ class KVOTestController: QtBaseViewController {
         }
     }
     
-    func actionReload(){
+    func actionChange(){
+        self.count = 10
+        self.isOK = !self.isOK
+        //self.arr.append(1)  //will trigger
+        //self.arr[0] = 10 //will trigger
+        var _arr = self.arr
+        _arr[0] = 10
+        _arr.append(100) //will not trigger actually self.arr is not changed
+        self.arr2[0].timeCount = 10 //will not trigger
         var newArr = Array<ClockModel>()
         for i in 1000...1005{
             newArr.append(ClockModel(i))

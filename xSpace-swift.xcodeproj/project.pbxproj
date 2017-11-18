@@ -12,6 +12,19 @@
 		6302FECC1FAD844400F978DA /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6302FECB1FAD844400F978DA /* GridViewController.swift */; };
 		6387BD2B1F9F014D00D5BD66 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387BD2A1F9F014D00D5BD66 /* BaseViewController.swift */; };
 		6387BD2D1F9F01C600D5BD66 /* AViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387BD2C1F9F01C600D5BD66 /* AViewController.swift */; };
+		6391A8781FBE88B400431D72 /* AgoraAudientController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A8771FBE88B400431D72 /* AgoraAudientController.swift */; };
+		6391A87B1FBE8A2400431D72 /* AgoraRtcEngineKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6391A87A1FBE8A2400431D72 /* AgoraRtcEngineKit.framework */; };
+		6391A87D1FBE8FE500431D72 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6391A87C1FBE8FE500431D72 /* CoreTelephony.framework */; };
+		6391A87F1FBE8FFF00431D72 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6391A87E1FBE8FFF00431D72 /* AudioToolbox.framework */; };
+		6391A8811FBE900900431D72 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6391A8801FBE900900431D72 /* CoreMedia.framework */; };
+		6391A8851FBE902800431D72 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6391A8841FBE902800431D72 /* AVFoundation.framework */; };
+		6391A8891FBE907700431D72 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6391A8881FBE907700431D72 /* libc++.tbd */; };
+		6391A88F1FBE910300431D72 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6391A88E1FBE910300431D72 /* libresolv.tbd */; };
+		6391A8911FBE911A00431D72 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6391A8901FBE911A00431D72 /* CoreMotion.framework */; };
+		6391A8931FBE912C00431D72 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6391A8921FBE912C00431D72 /* VideoToolbox.framework */; };
+		6391A89E1FBEA01C00431D72 /* AgoraBroadcasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A89D1FBEA01C00431D72 /* AgoraBroadcasterController.swift */; };
+		6391A8A01FBEA1A700431D72 /* QtAgoraEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A89F1FBEA1A700431D72 /* QtAgoraEngine.swift */; };
+		6391A8A51FC063FA00431D72 /* QtAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A8A41FC063FA00431D72 /* QtAlert.swift */; };
 		639296B61FAC8105008E0935 /* ObjectWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639296B51FAC8105008E0935 /* ObjectWrapper.swift */; };
 		639296B91FACB3BD008E0935 /* QtNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639296B81FACB3BD008E0935 /* QtNotice.swift */; };
 		63BD76231F9853F4004D25D4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD76221F9853F4004D25D4 /* Extensions.swift */; };
@@ -48,6 +61,23 @@
 		6387BD2A1F9F014D00D5BD66 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		6387BD2C1F9F01C600D5BD66 /* AViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AViewController.swift; sourceTree = "<group>"; };
 		6391A8731FBAEE9600431D72 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		6391A8771FBE88B400431D72 /* AgoraAudientController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgoraAudientController.swift; sourceTree = "<group>"; };
+		6391A87A1FBE8A2400431D72 /* AgoraRtcEngineKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AgoraRtcEngineKit.framework; sourceTree = "<group>"; };
+		6391A87C1FBE8FE500431D72 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		6391A87E1FBE8FFF00431D72 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		6391A8801FBE900900431D72 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		6391A8821FBE901900431D72 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6391A8841FBE902800431D72 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		6391A8861FBE904F00431D72 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		6391A8881FBE907700431D72 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		6391A88A1FBE908500431D72 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		6391A88C1FBE909200431D72 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		6391A88E1FBE910300431D72 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		6391A8901FBE911A00431D72 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		6391A8921FBE912C00431D72 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		6391A89D1FBEA01C00431D72 /* AgoraBroadcasterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgoraBroadcasterController.swift; sourceTree = "<group>"; };
+		6391A89F1FBEA1A700431D72 /* QtAgoraEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtAgoraEngine.swift; sourceTree = "<group>"; };
+		6391A8A41FC063FA00431D72 /* QtAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtAlert.swift; sourceTree = "<group>"; };
 		639296B51FAC8105008E0935 /* ObjectWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectWrapper.swift; sourceTree = "<group>"; };
 		639296B81FACB3BD008E0935 /* QtNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtNotice.swift; sourceTree = "<group>"; };
 		63BD76221F9853F4004D25D4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -86,6 +116,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6391A8931FBE912C00431D72 /* VideoToolbox.framework in Frameworks */,
+				6391A8911FBE911A00431D72 /* CoreMotion.framework in Frameworks */,
+				6391A88F1FBE910300431D72 /* libresolv.tbd in Frameworks */,
+				6391A8891FBE907700431D72 /* libc++.tbd in Frameworks */,
+				6391A8851FBE902800431D72 /* AVFoundation.framework in Frameworks */,
+				6391A8811FBE900900431D72 /* CoreMedia.framework in Frameworks */,
+				6391A87F1FBE8FFF00431D72 /* AudioToolbox.framework in Frameworks */,
+				6391A87D1FBE8FE500431D72 /* CoreTelephony.framework in Frameworks */,
+				6391A87B1FBE8A2400431D72 /* AgoraRtcEngineKit.framework in Frameworks */,
 				EE13B97998AC0BE5E01950AF /* Pods_xSpace_swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +144,18 @@
 		46EF79A01301B69F686EE1EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6391A8921FBE912C00431D72 /* VideoToolbox.framework */,
+				6391A8901FBE911A00431D72 /* CoreMotion.framework */,
+				6391A88E1FBE910300431D72 /* libresolv.tbd */,
+				6391A88C1FBE909200431D72 /* libz.tbd */,
+				6391A88A1FBE908500431D72 /* libsqlite3.0.tbd */,
+				6391A8881FBE907700431D72 /* libc++.tbd */,
+				6391A8861FBE904F00431D72 /* libresolv.9.tbd */,
+				6391A8841FBE902800431D72 /* AVFoundation.framework */,
+				6391A8821FBE901900431D72 /* CoreGraphics.framework */,
+				6391A8801FBE900900431D72 /* CoreMedia.framework */,
+				6391A87E1FBE8FFF00431D72 /* AudioToolbox.framework */,
+				6391A87C1FBE8FE500431D72 /* CoreTelephony.framework */,
 				9E59FB21DBB978D04BCA7F78 /* Pods_xSpace_swift.framework */,
 			);
 			name = Frameworks;
@@ -135,9 +186,28 @@
 			name = "method exchange";
 			sourceTree = "<group>";
 		};
+		6391A8761FBE888800431D72 /* Agora */ = {
+			isa = PBXGroup;
+			children = (
+				6391A89F1FBEA1A700431D72 /* QtAgoraEngine.swift */,
+				6391A8771FBE88B400431D72 /* AgoraAudientController.swift */,
+				6391A89D1FBEA01C00431D72 /* AgoraBroadcasterController.swift */,
+			);
+			name = Agora;
+			sourceTree = "<group>";
+		};
+		6391A8791FBE89DD00431D72 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				6391A87A1FBE8A2400431D72 /* AgoraRtcEngineKit.framework */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
 		63BD76211F9853C6004D25D4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				6391A8A41FC063FA00431D72 /* QtAlert.swift */,
 				63F1F8F21F905D2D00CA8466 /* ControllerManager.swift */,
 				639296B81FACB3BD008E0935 /* QtNotice.swift */,
 				63E3B5C01FAAC2930039FE5D /* QtBaseViewController.swift */,
@@ -184,6 +254,7 @@
 		63EE251B1F8CBFC400E1A36A = {
 			isa = PBXGroup;
 			children = (
+				6391A8791FBE89DD00431D72 /* ThirdParty */,
 				63EE25261F8CBFC400E1A36A /* xSpace-swift */,
 				63EE25251F8CBFC400E1A36A /* Products */,
 				2E2C74FCD499C3B3F9522215 /* Pods */,
@@ -202,6 +273,7 @@
 		63EE25261F8CBFC400E1A36A /* xSpace-swift */ = {
 			isa = PBXGroup;
 			children = (
+				6391A8761FBE888800431D72 /* Agora */,
 				63BF0DD31FBAE91A00196680 /* KVO */,
 				6302FECA1FAD840D00F978DA /* QtGenericGridView */,
 				6302FEC71FAD499D00F978DA /* QtNotice */,
@@ -268,6 +340,11 @@
 					63EE25231F8CBFC400E1A36A = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -385,8 +462,10 @@
 				639296B61FAC8105008E0935 /* ObjectWrapper.swift in Sources */,
 				63E28CC81FA862D700F22C44 /* QtFont.swift in Sources */,
 				63BD76231F9853F4004D25D4 /* Extensions.swift in Sources */,
+				6391A89E1FBEA01C00431D72 /* AgoraBroadcasterController.swift in Sources */,
 				63BF0DD51FBAE95700196680 /* KVOTestController.swift in Sources */,
 				6387BD2D1F9F01C600D5BD66 /* AViewController.swift in Sources */,
+				6391A8A51FC063FA00431D72 /* QtAlert.swift in Sources */,
 				63E28CC61FA862D700F22C44 /* QtFullscreenPopGesture.swift in Sources */,
 				63E3B5B91FAABFD80039FE5D /* QtWebView.swift in Sources */,
 				63BF0DCF1FBAC75500196680 /* QtTimer.swift in Sources */,
@@ -396,6 +475,7 @@
 				63E28CD51FA8ACA900F22C44 /* QtFile.swift in Sources */,
 				63E28CBE1FA8626500F22C44 /* QtViewFactory.swift in Sources */,
 				63F1F8F31F905D2D00CA8466 /* ControllerManager.swift in Sources */,
+				6391A8A01FBEA1A700431D72 /* QtAgoraEngine.swift in Sources */,
 				6302FEC61FACCE8400F978DA /* QtWebViewController.swift in Sources */,
 				63E28CC51FA862D700F22C44 /* QtDevice.swift in Sources */,
 				639296B91FACB3BD008E0935 /* QtNotice.swift in Sources */,
@@ -408,6 +488,7 @@
 				63E3B5C11FAAC2930039FE5D /* QtBaseViewController.swift in Sources */,
 				63E3B5BF1FAAC2470039FE5D /* DrawController.swift in Sources */,
 				63E28CD01FA8AB8E00F22C44 /* API.swift in Sources */,
+				6391A8781FBE88B400431D72 /* AgoraAudientController.swift in Sources */,
 				63E28CC71FA862D700F22C44 /* QtColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,7 +629,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E6J3Q59668;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ThirdParty",
+				);
 				INFOPLIST_FILE = "xSpace-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xspace.xSpace-swift.xSpace-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -565,7 +652,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E6J3Q59668;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ThirdParty",
+				);
 				INFOPLIST_FILE = "xSpace-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xspace.xSpace-swift.xSpace-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";

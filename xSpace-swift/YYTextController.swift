@@ -16,6 +16,28 @@ class YYTextController: QtBaseViewController {
         super.viewDidLoad()
         self.view.backgroundColor = QtColor.white
         
+        //
+        let nameLabel = QtViewFactory.label(font: QtFont.regularPF(16), title: "aaa", color: QtColor.colorFromRGB(rgbValue: 0))
+        nameLabel.numberOfLines = 1
+        nameLabel.sizeToFit()
+        self.view.addSubview(nameLabel)
+        nameLabel.snp.remakeConstraints({ (make) in
+            make.left.equalTo(50)
+            make.top.equalTo(200)
+        })
+        //
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+DispatchTimeInterval.seconds(3)) {
+            nameLabel.text = "哈哈哈哈哈哈"
+            nameLabel.sizeToFit()
+            nameLabel.snp.remakeConstraints({ (make) in
+                make.left.equalTo(50)
+                make.top.equalTo(200)
+                make.width.equalTo(nameLabel.frame.width)
+                make.height.equalTo(16)
+            })
+            
+        }
+        
         let titleLabel = YYLabel()
         titleLabel.numberOfLines = 0
         let titleAttr = NSMutableAttributedString()
@@ -40,11 +62,10 @@ class YYTextController: QtBaseViewController {
         titleLabel.attributedText = titleAttr
         self.view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(100)
-            make.left.equalTo(100)
+            make.top.equalTo(nameLabel.snp.top)
+            make.left.equalTo(nameLabel.snp.right).offset(20)
             make.width.equalTo(totalSize.width)
             make.height.equalTo(totalSize.height)
         }
-        
     }
 }
