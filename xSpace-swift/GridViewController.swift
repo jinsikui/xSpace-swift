@@ -19,7 +19,7 @@ class GridViewController: QtBaseViewController {
         self.title = "QtGenericGridView"
         //
         let data1 = ["abc", "abcde", "abcdefghijklmnopq", "qq"]
-        let grid1 = QtGenericGridView()
+        let grid1 = QtGridView()
         grid1.scrollDirection = .horizontal
         grid1.isScrollEnabled = true
         grid1.dataList = data1
@@ -59,7 +59,7 @@ class GridViewController: QtBaseViewController {
         
         //
         let data2 = [20,30,40,20]
-        let grid2 = QtGenericGridView()
+        let grid2 = QtGridView()
         grid2.scrollDirection = .vertical
         grid2.isScrollEnabled = true
         grid2.dataList = data2

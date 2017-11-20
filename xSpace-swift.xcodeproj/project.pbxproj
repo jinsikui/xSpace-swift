@@ -31,7 +31,7 @@
 		63BF0DCF1FBAC75500196680 /* QtTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF0DCE1FBAC75500196680 /* QtTimer.swift */; };
 		63BF0DD51FBAE95700196680 /* KVOTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF0DD41FBAE95700196680 /* KVOTestController.swift */; };
 		63E28CBE1FA8626500F22C44 /* QtViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28CBD1FA8626500F22C44 /* QtViewFactory.swift */; };
-		63E28CC41FA862D700F22C44 /* QtGenericGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28CBF1FA862D700F22C44 /* QtGenericGridView.swift */; };
+		63E28CC41FA862D700F22C44 /* QtGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28CBF1FA862D700F22C44 /* QtGridView.swift */; };
 		63E28CC51FA862D700F22C44 /* QtDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28CC01FA862D700F22C44 /* QtDevice.swift */; };
 		63E28CC61FA862D700F22C44 /* QtFullscreenPopGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28CC11FA862D700F22C44 /* QtFullscreenPopGesture.swift */; };
 		63E28CC71FA862D700F22C44 /* QtColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28CC21FA862D700F22C44 /* QtColor.swift */; };
@@ -84,7 +84,7 @@
 		63BF0DCE1FBAC75500196680 /* QtTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QtTimer.swift; sourceTree = "<group>"; };
 		63BF0DD41FBAE95700196680 /* KVOTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVOTestController.swift; sourceTree = "<group>"; };
 		63E28CBD1FA8626500F22C44 /* QtViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtViewFactory.swift; sourceTree = "<group>"; };
-		63E28CBF1FA862D700F22C44 /* QtGenericGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtGenericGridView.swift; sourceTree = "<group>"; };
+		63E28CBF1FA862D700F22C44 /* QtGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtGridView.swift; sourceTree = "<group>"; };
 		63E28CC01FA862D700F22C44 /* QtDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtDevice.swift; sourceTree = "<group>"; };
 		63E28CC11FA862D700F22C44 /* QtFullscreenPopGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtFullscreenPopGesture.swift; sourceTree = "<group>"; };
 		63E28CC21FA862D700F22C44 /* QtColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtColor.swift; sourceTree = "<group>"; };
@@ -169,12 +169,12 @@
 			name = QtNotice;
 			sourceTree = "<group>";
 		};
-		6302FECA1FAD840D00F978DA /* QtGenericGridView */ = {
+		6302FECA1FAD840D00F978DA /* QtGridView */ = {
 			isa = PBXGroup;
 			children = (
 				6302FECB1FAD844400F978DA /* GridViewController.swift */,
 			);
-			name = QtGenericGridView;
+			name = QtGridView;
 			sourceTree = "<group>";
 		};
 		636BCD911F9EF66C00B49ABB /* method exchange */ = {
@@ -217,7 +217,7 @@
 				63E28CC01FA862D700F22C44 /* QtDevice.swift */,
 				63E28CC31FA862D700F22C44 /* QtFont.swift */,
 				63E28CC11FA862D700F22C44 /* QtFullscreenPopGesture.swift */,
-				63E28CBF1FA862D700F22C44 /* QtGenericGridView.swift */,
+				63E28CBF1FA862D700F22C44 /* QtGridView.swift */,
 				63E28CBD1FA8626500F22C44 /* QtViewFactory.swift */,
 				63BD76221F9853F4004D25D4 /* Extensions.swift */,
 				639296B51FAC8105008E0935 /* ObjectWrapper.swift */,
@@ -275,7 +275,7 @@
 			children = (
 				6391A8761FBE888800431D72 /* Agora */,
 				63BF0DD31FBAE91A00196680 /* KVO */,
-				6302FECA1FAD840D00F978DA /* QtGenericGridView */,
+				6302FECA1FAD840D00F978DA /* QtGridView */,
 				6302FEC71FAD499D00F978DA /* QtNotice */,
 				63E3B5B71FAABEF20039FE5D /* Draw */,
 				63E28CC91FA8676400F22C44 /* YYText */,
@@ -471,7 +471,7 @@
 				63BF0DCF1FBAC75500196680 /* QtTimer.swift in Sources */,
 				6302FECC1FAD844400F978DA /* GridViewController.swift in Sources */,
 				63E28CCB1FA8679C00F22C44 /* YYTextController.swift in Sources */,
-				63E28CC41FA862D700F22C44 /* QtGenericGridView.swift in Sources */,
+				63E28CC41FA862D700F22C44 /* QtGridView.swift in Sources */,
 				63E28CD51FA8ACA900F22C44 /* QtFile.swift in Sources */,
 				63E28CBE1FA8626500F22C44 /* QtViewFactory.swift in Sources */,
 				63F1F8F31F905D2D00CA8466 /* ControllerManager.swift in Sources */,

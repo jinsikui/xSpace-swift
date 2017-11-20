@@ -37,7 +37,7 @@ fileprivate struct UICollectionViewCellRuntimeKey {
     static let KEY_indexPath = UnsafeRawPointer(bitPattern: "KEY_indexPath".hashValue)
 }
 
-class QtGenericGridView: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+class QtGridView: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     var collectionView:UICollectionView!
     private var layout:UICollectionViewFlowLayout!
@@ -46,7 +46,7 @@ class QtGenericGridView: UIView, UICollectionViewDelegateFlowLayout, UICollectio
     private var _buildCellCallback:((UICollectionViewCell)->())?
     private var _itemSizeCallback:((Any,IndexPath)->CGSize)?
     private var _selectCellCallback:((UICollectionViewCell)->())?
-
+    
     var cellClass:AnyClass! = UICollectionViewCell.self
     var dataList:Array<Any>?
     var bounce:Bool{
@@ -100,7 +100,7 @@ class QtGenericGridView: UIView, UICollectionViewDelegateFlowLayout, UICollectio
             return collectionView.isScrollEnabled
         }
     }
-   var contentInset:UIEdgeInsets{
+    var contentInset:UIEdgeInsets{
         set{
             collectionView.contentInset = newValue
         }
@@ -163,25 +163,9 @@ class QtGenericGridView: UIView, UICollectionViewDelegateFlowLayout, UICollectio
     func numberOfItems(inSection section: Int) -> Int{
         return collectionView.numberOfItems(inSection:section)
     }
-
+    
     func reloadData() {
         collectionView.reloadData()
-    }
-    
-    func insertItems(at indexPaths: [IndexPath]){
-        collectionView.insertItems(at: indexPaths)
-    }
-    
-    func deleteItems(at indexPaths: [IndexPath]){
-        collectionView.deleteItems(at: indexPaths)
-    }
-    
-    func reloadItems(at indexPaths: [IndexPath]){
-        collectionView.reloadItems(at: indexPaths)
-    }
-    
-    func performBatchUpdates(_ updates: (() -> Swift.Void)?, completion: ((Bool) -> Swift.Void)? = nil){
-        collectionView.performBatchUpdates(updates, completion: completion)
     }
     
     func scrollToItem(at indexPath: IndexPath, at scrollPosition: UICollectionViewScrollPosition, animated: Bool){
@@ -222,7 +206,7 @@ class QtGenericGridView: UIView, UICollectionViewDelegateFlowLayout, UICollectio
         super.init(frame: frame)
         self.prepare()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.prepare()

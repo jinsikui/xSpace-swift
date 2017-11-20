@@ -30,6 +30,14 @@ class QtAlert: NSObject {
     static var isShowing:Bool = false
     static var lastMessage:String?
     
+    static func show(message:String){
+        self.show(title: "提示", message: message, cancelTitle: "确定", confirmTitle: nil, completion: nil)
+    }
+    
+    static func show(message:String, completion:((QtAlertAction)->())?){
+        self.show(title: "提示", message: message, cancelTitle: "确定", confirmTitle: nil, completion: completion)
+    }
+    
     static func show(title:String?, message:String?, cancelTitle:String?, confirmTitle:String?, completion:((QtAlertAction)->())?){
         if(isShowing && lastMessage != nil && message != nil && lastMessage! == message!){
             return

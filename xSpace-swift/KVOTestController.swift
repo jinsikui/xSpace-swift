@@ -59,7 +59,7 @@ class KVOTestController: QtBaseViewController {
     var clockList:Array<ClockModel> = Array<ClockModel>()
     var timer:QtTimer!
     let labelTag = 1000
-    var tableView:QtGenericGridView!
+    var tableView:QtGridView!
     private var _count:Int = 0
     dynamic var count:Int{
         set{
@@ -108,7 +108,7 @@ class KVOTestController: QtBaseViewController {
             make.height.equalTo(50)
         }
         
-        let tableView = QtGenericGridView(cellClass: ClockCell.self)
+        let tableView = QtGridView(cellClass: ClockCell.self)
         self.tableView = tableView
         tableView.backgroundColor = QtColor.fromRGB(0xEEEEEE)
         tableView.scrollDirection = .vertical
