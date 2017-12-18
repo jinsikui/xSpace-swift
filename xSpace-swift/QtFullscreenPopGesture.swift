@@ -22,9 +22,9 @@ extension UINavigationController {
     
     public class func qt_exchangePushViewController() {
         // Inject "-pushViewController:animated:"
-        DispatchQueue.qt_once(token: "com.UINavigationController.MethodSwizzling", block: {
-            let originalMethod = class_getInstanceMethod(self, #selector(pushViewController(_:animated:)))!
-            let swizzledMethod = class_getInstanceMethod(self, #selector(qt_pushViewController(_:animated:)))!
+        DispatchQueue.once(token: "com.UINavigationController.MethodSwizzling", block: {
+            let originalMethod = class_getInstanceMethod(self, #selector(pushViewController(_:animated:)))
+            let swizzledMethod = class_getInstanceMethod(self, #selector(qt_pushViewController(_:animated:)))
             method_exchangeImplementations(originalMethod, swizzledMethod)
         })
     }
@@ -130,11 +130,11 @@ extension UIViewController {
     public class func qt_exchangeViewWillAppear() {
         
         DispatchQueue.once(token: "com.UIViewController.MethodSwizzling", block: {
-            var originalMethod = class_getInstanceMethod(self, #selector(viewWillAppear(_:)))!
-            var swizzledMethod = class_getInstanceMethod(self, #selector(qt_viewWillAppear(_:)))!
+            var originalMethod = class_getInstanceMethod(self, #selector(viewWillAppear(_:)))
+            var swizzledMethod = class_getInstanceMethod(self, #selector(qt_viewWillAppear(_:)))
             method_exchangeImplementations(originalMethod, swizzledMethod)
-            originalMethod = class_getInstanceMethod(self, #selector(viewDidLoad))!
-            swizzledMethod = class_getInstanceMethod(self, #selector(qt_viewDidLoad))!
+            originalMethod = class_getInstanceMethod(self, #selector(viewDidLoad))
+            swizzledMethod = class_getInstanceMethod(self, #selector(qt_viewDidLoad))
             method_exchangeImplementations(originalMethod, swizzledMethod)
         })
     }
@@ -257,21 +257,21 @@ private class _QTFullscreenPopGestureRecognizerDelegate: NSObject, UIGestureReco
 
 fileprivate struct RuntimeKey {
     static let KEY_qt_willAppearInjectBlockContainer
-        = UnsafeRawPointer(bitPattern: "KEY_qt_willAppearInjectBlockContainer".hashValue)!
+        = UnsafeRawPointer(bitPattern: "KEY_qt_willAppearInjectBlockContainer".hashValue)
     static let KEY_qt_interactivePopDisabled
-        = UnsafeRawPointer(bitPattern: "KEY_qt_interactivePopDisabled".hashValue)!
+        = UnsafeRawPointer(bitPattern: "KEY_qt_interactivePopDisabled".hashValue)
     static let KEY_qt_prefersNavigationBarHidden
-        = UnsafeRawPointer(bitPattern: "KEY_qt_prefersNavigationBarHidden".hashValue)!
+        = UnsafeRawPointer(bitPattern: "KEY_qt_prefersNavigationBarHidden".hashValue)
     static let KEY_qt_interactivePopMaxAllowedInitialDistanceToLeftEdge
-        = UnsafeRawPointer(bitPattern: "KEY_qt_interactivePopMaxAllowedInitialDistanceToLeftEdge".hashValue)!
+        = UnsafeRawPointer(bitPattern: "KEY_qt_interactivePopMaxAllowedInitialDistanceToLeftEdge".hashValue)
     static let KEY_qt_fullscreenPopGestureRecognizer
-        = UnsafeRawPointer(bitPattern: "KEY_qt_fullscreenPopGestureRecognizer".hashValue)!
+        = UnsafeRawPointer(bitPattern: "KEY_qt_fullscreenPopGestureRecognizer".hashValue)
     static let KEY_qt_popGestureRecognizerDelegate
-        = UnsafeRawPointer(bitPattern: "KEY_qt_popGestureRecognizerDelegate".hashValue)!
+        = UnsafeRawPointer(bitPattern: "KEY_qt_popGestureRecognizerDelegate".hashValue)
     static let KEY_qt_viewControllerBasedNavigationBarAppearanceEnabled
-        = UnsafeRawPointer(bitPattern: "KEY_qt_viewControllerBasedNavigationBarAppearanceEnabled".hashValue)!
+        = UnsafeRawPointer(bitPattern: "KEY_qt_viewControllerBasedNavigationBarAppearanceEnabled".hashValue)
     static let KEY_qt_scrollViewPopGestureRecognizerEnable
-        = UnsafeRawPointer(bitPattern: "KEY_qt_scrollViewPopGestureRecognizerEnable".hashValue)!
+        = UnsafeRawPointer(bitPattern: "KEY_qt_scrollViewPopGestureRecognizerEnable".hashValue)
 }
 
 extension UIScrollView: UIGestureRecognizerDelegate {
@@ -299,7 +299,7 @@ extension UIScrollView: UIGestureRecognizerDelegate {
     }
 }
 
-fileprivate extension DispatchQueue {
+extension DispatchQueue {
     
     private static var _onceTracker = [String]()
     
@@ -310,7 +310,7 @@ fileprivate extension DispatchQueue {
      - parameter token: A unique reverse DNS style name such as com.vectorform.<name> or a GUID
      - parameter block: Block to execute once
      */
-    class func qt_once(token: String, block: () -> ()) {
+    class func once(token: String, block: () -> Void) {
         objc_sync_enter(self)
         defer { objc_sync_exit(self) }
         

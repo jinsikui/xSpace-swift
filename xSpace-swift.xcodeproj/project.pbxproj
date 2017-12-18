@@ -10,9 +10,9 @@
 		6302FEC61FACCE8400F978DA /* QtWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6302FEC51FACCE8400F978DA /* QtWebViewController.swift */; };
 		6302FEC91FAD49C500F978DA /* NoticeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6302FEC81FAD49C500F978DA /* NoticeController.swift */; };
 		6302FECC1FAD844400F978DA /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6302FECB1FAD844400F978DA /* GridViewController.swift */; };
+		630A141B1FD15E4C00B0864B /* MyObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630A141A1FD15E4C00B0864B /* MyObject.swift */; };
 		6387BD2B1F9F014D00D5BD66 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387BD2A1F9F014D00D5BD66 /* BaseViewController.swift */; };
 		6387BD2D1F9F01C600D5BD66 /* AViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387BD2C1F9F01C600D5BD66 /* AViewController.swift */; };
-		6391A8781FBE88B400431D72 /* AgoraAudientController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6391A8771FBE88B400431D72 /* AgoraAudientController.swift */; };
 		6391A87B1FBE8A2400431D72 /* AgoraRtcEngineKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6391A87A1FBE8A2400431D72 /* AgoraRtcEngineKit.framework */; };
 		6391A87D1FBE8FE500431D72 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6391A87C1FBE8FE500431D72 /* CoreTelephony.framework */; };
 		6391A87F1FBE8FFF00431D72 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6391A87E1FBE8FFF00431D72 /* AudioToolbox.framework */; };
@@ -30,6 +30,7 @@
 		63BD76231F9853F4004D25D4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD76221F9853F4004D25D4 /* Extensions.swift */; };
 		63BF0DCF1FBAC75500196680 /* QtTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF0DCE1FBAC75500196680 /* QtTimer.swift */; };
 		63BF0DD51FBAE95700196680 /* KVOTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF0DD41FBAE95700196680 /* KVOTestController.swift */; };
+		63D3F43C1FC8463B0061B993 /* QtSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D3F43B1FC8463B0061B993 /* QtSwift.swift */; };
 		63E28CBE1FA8626500F22C44 /* QtViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28CBD1FA8626500F22C44 /* QtViewFactory.swift */; };
 		63E28CC41FA862D700F22C44 /* QtGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28CBF1FA862D700F22C44 /* QtGridView.swift */; };
 		63E28CC51FA862D700F22C44 /* QtDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28CC01FA862D700F22C44 /* QtDevice.swift */; };
@@ -58,10 +59,10 @@
 		6302FEC51FACCE8400F978DA /* QtWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtWebViewController.swift; sourceTree = "<group>"; };
 		6302FEC81FAD49C500F978DA /* NoticeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeController.swift; sourceTree = "<group>"; };
 		6302FECB1FAD844400F978DA /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
+		630A141A1FD15E4C00B0864B /* MyObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyObject.swift; sourceTree = "<group>"; };
 		6387BD2A1F9F014D00D5BD66 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		6387BD2C1F9F01C600D5BD66 /* AViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AViewController.swift; sourceTree = "<group>"; };
 		6391A8731FBAEE9600431D72 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		6391A8771FBE88B400431D72 /* AgoraAudientController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgoraAudientController.swift; sourceTree = "<group>"; };
 		6391A87A1FBE8A2400431D72 /* AgoraRtcEngineKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AgoraRtcEngineKit.framework; sourceTree = "<group>"; };
 		6391A87C1FBE8FE500431D72 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		6391A87E1FBE8FFF00431D72 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -83,6 +84,7 @@
 		63BD76221F9853F4004D25D4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		63BF0DCE1FBAC75500196680 /* QtTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QtTimer.swift; sourceTree = "<group>"; };
 		63BF0DD41FBAE95700196680 /* KVOTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVOTestController.swift; sourceTree = "<group>"; };
+		63D3F43B1FC8463B0061B993 /* QtSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtSwift.swift; sourceTree = "<group>"; };
 		63E28CBD1FA8626500F22C44 /* QtViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtViewFactory.swift; sourceTree = "<group>"; };
 		63E28CBF1FA862D700F22C44 /* QtGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtGridView.swift; sourceTree = "<group>"; };
 		63E28CC01FA862D700F22C44 /* QtDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtDevice.swift; sourceTree = "<group>"; };
@@ -177,6 +179,14 @@
 			name = QtGridView;
 			sourceTree = "<group>";
 		};
+		630A14191FD15E2700B0864B /* Nullable */ = {
+			isa = PBXGroup;
+			children = (
+				630A141A1FD15E4C00B0864B /* MyObject.swift */,
+			);
+			name = Nullable;
+			sourceTree = "<group>";
+		};
 		636BCD911F9EF66C00B49ABB /* method exchange */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,7 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				6391A89F1FBEA1A700431D72 /* QtAgoraEngine.swift */,
-				6391A8771FBE88B400431D72 /* AgoraAudientController.swift */,
 				6391A89D1FBEA01C00431D72 /* AgoraBroadcasterController.swift */,
 			);
 			name = Agora;
@@ -207,6 +216,7 @@
 		63BD76211F9853C6004D25D4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				63D3F43B1FC8463B0061B993 /* QtSwift.swift */,
 				6391A8A41FC063FA00431D72 /* QtAlert.swift */,
 				63F1F8F21F905D2D00CA8466 /* ControllerManager.swift */,
 				639296B81FACB3BD008E0935 /* QtNotice.swift */,
@@ -273,6 +283,7 @@
 		63EE25261F8CBFC400E1A36A /* xSpace-swift */ = {
 			isa = PBXGroup;
 			children = (
+				630A14191FD15E2700B0864B /* Nullable */,
 				6391A8761FBE888800431D72 /* Agora */,
 				63BF0DD31FBAE91A00196680 /* KVO */,
 				6302FECA1FAD840D00F978DA /* QtGridView */,
@@ -465,6 +476,7 @@
 				6391A89E1FBEA01C00431D72 /* AgoraBroadcasterController.swift in Sources */,
 				63BF0DD51FBAE95700196680 /* KVOTestController.swift in Sources */,
 				6387BD2D1F9F01C600D5BD66 /* AViewController.swift in Sources */,
+				630A141B1FD15E4C00B0864B /* MyObject.swift in Sources */,
 				6391A8A51FC063FA00431D72 /* QtAlert.swift in Sources */,
 				63E28CC61FA862D700F22C44 /* QtFullscreenPopGesture.swift in Sources */,
 				63E3B5B91FAABFD80039FE5D /* QtWebView.swift in Sources */,
@@ -485,10 +497,10 @@
 				63F1F90D1F91D49300CA8466 /* H5ViewController.swift in Sources */,
 				63F1F8F11F8E28E900CA8466 /* RootController.swift in Sources */,
 				63E3B5C31FAAC2FD0039FE5D /* QtCornerView.swift in Sources */,
+				63D3F43C1FC8463B0061B993 /* QtSwift.swift in Sources */,
 				63E3B5C11FAAC2930039FE5D /* QtBaseViewController.swift in Sources */,
 				63E3B5BF1FAAC2470039FE5D /* DrawController.swift in Sources */,
 				63E28CD01FA8AB8E00F22C44 /* API.swift in Sources */,
-				6391A8781FBE88B400431D72 /* AgoraAudientController.swift in Sources */,
 				63E28CC71FA862D700F22C44 /* QtColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class QtTimerContext {
     var curTime:Int = 0
@@ -33,6 +34,7 @@ class QtNotice : NSObject {
     let kAppEnterBackground = "QtNotice.AppEnterBackground"
     let kAppWillTerminate = "QtNotice.AppWillTerminate"
     let kAppWillResignActive = "QtNotice.AppWillResignActive"
+    let kAppAudioSessionRouteChange = "QtNotice.AppAudioSessionRouteChange"
     let kTimerTicking = "QtNotice.TimerTicking"
     let kSignIn = "QtNotice.SignIn"
     var customEventNames = Array<String>()
@@ -58,8 +60,6 @@ class QtNotice : NSObject {
     
     deinit{
         NotificationCenter.default.removeObserver(self)
-        timer.cancel()
-        timer = nil
     }
     
     func registerNotices(){
@@ -73,6 +73,7 @@ class QtNotice : NSObject {
         NotificationCenter.default.addObserver(self, selector: #selector(appWillTerminate), name: NSNotification.Name.UIApplicationWillTerminate, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(appWillResignActive), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(appWillResignActive), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appAudioSessionRouteChange), name: NSNotification.Name.AVAudioSessionRouteChange, object: nil)
         //
         NotificationCenter.default.addObserver(self, selector: #selector(fireSignIn), name:NSNotification.Name(rawValue: self.kSignIn), object: nil)
     }
@@ -127,6 +128,12 @@ class QtNotice : NSObject {
         bindQueue.async {
             self.suspendTimer()
             self.runAction(key: self.kAppWillResignActive, param: notification.userInfo)
+        }
+    }
+    
+    @objc func appAudioSessionRouteChange(notification: NSNotification){
+        bindQueue.async {
+            self.runAction(key: self.kAppAudioSessionRouteChange, param: notification.userInfo)
         }
     }
     
@@ -199,6 +206,12 @@ class QtNotice : NSObject {
         })
     }
     
+    func registerAppAudioSessionRouteChange(lifeIndicator:AnyObject, action:@escaping (Any?)->()){
+        bindQueue.async(execute: DispatchWorkItem(flags: .barrier) {
+            self.setAction(self.kAppAudioSessionRouteChange, lifeIndicator: lifeIndicator, action: action)
+        })
+    }
+    
     private func registerTimerTicking(lifeIndicator:AnyObject, action:@escaping (Any?)->()) {
         bindQueue.async(execute: DispatchWorkItem(flags: .barrier) {
             self.setAction(self.kTimerTicking, lifeIndicator: lifeIndicator, action: action)
@@ -254,3 +267,4 @@ class QtNotice : NSObject {
         })
     }
 }
+

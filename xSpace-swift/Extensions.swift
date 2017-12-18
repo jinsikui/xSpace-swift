@@ -1,14 +1,85 @@
-//
-//  Extensions.swift
-//  xSpace-swift
-//
-//  Created by JSK on 2017/10/19.
-//  Copyright © 2017年 JSK. All rights reserved.
-//
-
-import UIKit
 import Foundation
+import UIKit
+import AlamofireImage
 import YYText
+
+
+public enum UIBorderSide {
+    // Specify the boarders location at four sides
+    case top, down, left, right
+}
+
+extension Array{
+    func qt_prefixArrayOf(count:Int) -> Array{
+        return self.enumerated().flatMap{ $0.offset < count ? $0.element : nil }
+    }
+    
+    func qt_suffixArrayOf(count:Int) -> Array{
+        return self.enumerated().flatMap{ $0.offset >= self.count - count ? $0.element : nil }
+    }
+}
+
+extension UITableView{
+    
+    func scrollToTop(animated:Bool){
+        if(self.numberOfRows(inSection: 0) > 0){
+            self.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: animated)
+        }
+        else{
+            self.scrollTo(offset: CGPoint(x:0, y:0), animated: animated)
+        }
+    }
+    
+    func scrollTo(offset:CGPoint, animated:Bool) {
+        self.setContentOffset(offset, animated: animated)
+    }
+    
+    func scrollToBottom(animated:Bool){
+        let rowCount = self.numberOfRows(inSection: 0)
+        if(rowCount > 0){
+            if(rowCount >= 2){
+                self.scrollToRow(at: IndexPath(row: rowCount - 2, section: 0), at: .bottom, animated: false)
+            }
+            self.scrollToRow(at: IndexPath(row: rowCount - 1, section: 0), at: .bottom, animated: animated)
+        }
+    }
+}
+
+extension UIView {
+    func addBorder(side: UIBorderSide, color: UIColor, width: CGFloat, insetX: CGFloat=0.0, insetY: CGFloat=0.0) {
+        // Add boarder to uiview by add sublayer to the layer
+        let border = CALayer()
+        border.borderColor = color.cgColor
+        switch side {
+        case .down:
+            border.frame = CGRect(x: insetX, y: frame.size.height + insetY, width: frame.size.width - 2*insetX, height: width)
+        case .top:
+            // TODO: implement it yourself
+            break
+        case .left:
+            border.frame = CGRect(x: insetX, y: insetY, width: width, height: frame.size.height - 2*insetY)
+            break
+        case .right:
+            // TODO: implement it yourself
+            break
+        }
+        border.borderWidth = width
+        layer.addSublayer(border)
+        border.masksToBounds = true
+    }
+}
+
+extension String {
+    
+    func qt_sizeWithFont(_ font:UIFont, maxWidth:CGFloat) -> CGSize{
+        let attr = NSAttributedString(string: self, attributes: [NSFontAttributeName: font])
+        return attr.qt_sizeWithMaxWidth(maxWidth: maxWidth)
+    }
+    
+    func qt_sizeWithFont(_ font:UIFont) -> CGSize{
+        return self.qt_sizeWithFont(font, maxWidth: CGFloat.greatestFiniteMagnitude)
+    }
+}
 
 extension NSAttributedString {
     
@@ -60,6 +131,18 @@ extension NSMutableAttributedString{
 
 extension String {
     
+    func qt_subString(_ start:Int, len:Int) -> String{
+        return self[self.index(self.startIndex, offsetBy:start) ..< self.index(self.startIndex, offsetBy:len)]
+    }
+    
+    func toDate(format: String="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'") -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        formatter.timeZone = TimeZone(abbreviation: "UTC")
+        let date = formatter.date(from: self)
+        return date
+    }
+    
     func index(of string: String, options: CompareOptions = .literal) -> Index? {
         return range(of: string, options: options)?.lowerBound
     }
@@ -83,6 +166,67 @@ extension String {
             start = range.upperBound
         }
         return result
+    }
+}
+
+extension UIImageView {
+    func showAvatar(urlString: String?, width: CGFloat) {
+        let placeholder = UIImage(named: "avatarPlaceholder")?.af_imageRoundedIntoCircle()
+        if let urlString = urlString, urlString.count > 0 {
+            let url = URL(string: urlString)!
+            let filter = AspectScaledToFillSizeWithRoundedCornersFilter(size: CGSize(width: width, height: width), radius: width/2)
+            self.af_setImage(withURL: url, placeholderImage: placeholder, filter: filter)
+        } else {
+            image = placeholder
+        }
+    }
+    
+    func showCover(urlString: String?) {
+        let placeholder = UIImage(named: "coverPlaceholder")
+        if let urlString = urlString, urlString.count > 0 {
+            let url = URL(string: urlString)!
+            contentMode = .scaleAspectFill
+            self.af_setImage(withURL: url, placeholderImage: placeholder)
+            
+        } else {
+            image = placeholder
+        }
+    }
+    func showImage(urlString: String?) {
+        if let urlString = urlString, urlString.count > 0 {
+            let url = URL(string: urlString)!
+            self.af_setImage(withURL: url)
+        }
+    }
+}
+
+extension Date {
+    func formatted(format: String="yyyy.MM.dd HH:mm") -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.string(from: self)
+    }
+    
+    func UTC8Formatted(format: String="yyyy-MM-dd HH:mm:ss") -> String {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone(abbreviation: "CT")
+        formatter.dateFormat = format
+        return formatter.string(from: self)
+    }
+    
+    var isoString: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        formatter.timeZone = TimeZone(abbreviation: "UTC")
+        return formatter.string(from: self)
+    }
+}
+
+extension UIViewController {
+    func presentAlert(title: String) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "确认", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -188,40 +332,24 @@ extension UIImage {
         return UIImage(data: imageData as Data)!
     }
     
-    // 图片是否不透明
-    var isOpaque: Bool { return !containsAlphaComponent }
-    
-    private var containsAlphaComponent: Bool {
+    var containsAlphaComponent: Bool {
         let alphaInfo = cgImage?.alphaInfo
         return (
             alphaInfo == .first ||
-                alphaInfo == .last ||
-                alphaInfo == .premultipliedFirst ||
-                alphaInfo == .premultipliedLast
+            alphaInfo == .last ||
+            alphaInfo == .premultipliedFirst ||
+            alphaInfo == .premultipliedLast
         )
     }
+    
+    /// Returns whether the image is opaque.
+    var isOpaque: Bool { return !containsAlphaComponent }
 }
 
-extension DispatchQueue {
-    
-    private static var _onceTracker = [String]()
-    
-    /**
-     Executes a block of code, associated with a unique token, only once.  The code is thread safe and will
-     only execute the code once even in the presence of multithreaded calls.
-     
-     - parameter token: A unique reverse DNS style name such as com.vectorform.<name> or a GUID
-     - parameter block: Block to execute once
-     */
-    static func once(token: String, block: () -> Void) {
-        objc_sync_enter(self)
-        defer { objc_sync_exit(self) }
-        
-        if _onceTracker.contains(token) {
-            return
-        }
-        
-        _onceTracker.append(token)
-        block()
+extension NSData {
+    // size: kb
+    func compressImageToSize(_ size: Float) -> UIImage? {
+        let image = UIImage(data:self as Data)
+        return image?.compressToSize(size)
     }
 }

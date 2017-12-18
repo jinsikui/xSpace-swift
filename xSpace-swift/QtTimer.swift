@@ -20,7 +20,7 @@ class QtTimer: NSObject {
     
     init(interval:DispatchTimeInterval, queue:DispatchQueue, action:@escaping ()->()){
         super.init()
-        self.queue = DispatchQueue.global()
+        self.queue = queue
         self.action = action
         let timer = DispatchSource.makeTimerSource(queue: queue)
         self.timer = timer
@@ -30,9 +30,15 @@ class QtTimer: NSObject {
         }
     }
     
-    deinit{
+    deinit {
+        timer.setEventHandler {}
         timer.cancel()
-        timer = nil
+        /*
+         If the timer is suspended, calling cancel without resuming
+         triggers a crash. This is documented here https://forums.developer.apple.com/thread/15902
+         */
+        start()
+        action = nil
     }
     
     func start(){
@@ -49,11 +55,6 @@ class QtTimer: NSObject {
         }
         isTimerRunning = false
         timer.suspend()
-    }
-    
-    func cancel(){
-        timer.cancel()
-        timer = nil
     }
     
     func timerTicking(){

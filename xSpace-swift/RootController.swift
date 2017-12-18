@@ -34,76 +34,43 @@ class RootController: UIViewController {
             make.left.right.top.bottom.equalTo(0)
         }
         //
-        let x = CGFloat(0.5*(QtDevice.screenWidth - 150))
-        var btn = QtViewFactory.button(text: "WebView", font: QtFont.regularPF(15), textColor:QtColor.blue, bgColor:QtColor.white, cornerRadius: 2, borderColor: QtColor.blue)
-        btn.addTarget(self, action: #selector(self.actionQtWebView), for: .touchUpInside)
-        btn.frame = CGRect(x: x, y: 50, width: 150, height: 50)
-        scroll.addSubview(btn)
+        self.createBtn("WebView", y: 50, action: #selector(self.actionQtWebView))
+        self.createBtn("exchange method", y: 120, action: #selector(self.actionMethodExchange))
+        self.createBtn("yy text", y: 190, action: #selector(self.actionYYText))
+        self.createBtn("get json", y: 260, action: #selector(self.actionGetJson))
+        self.createBtn("hex color", y: 330, action: #selector(self.actionHexColor))
+        self.createBtn("draw rect", y: 400, action: #selector(self.actionDrawRect))
+        self.createBtn("timer", y: 470, action: #selector(self.actionTimer))
+        self.createBtn("notice", y: 540, action: #selector(self.actionNotice))
+        self.createBtn("GridView", y: 610, action: #selector(self.actionGridView))
+        self.createBtn("KVO", y: 680, action: #selector(self.actionKVO))
+        self.createBtn("Agora Master", y: 750, action: #selector(self.actionAgoraBroadcaster))
+        self.createBtn("Nullable", y: 820, action: #selector(self.actionNullable))
+        self.createBtn("Substring", y: 890, action: #selector(self.actionSubString))
+        self.createBtn("deviceInfo", y: 960, action: #selector(self.actionDevice))
         //
-        btn = QtViewFactory.button(text: "exchange method", font: QtFont.regularPF(15), textColor:QtColor.blue, bgColor:QtColor.white, cornerRadius: 2, borderColor: QtColor.blue)
-        btn.addTarget(self, action: #selector(self.actionMethodExchange), for: .touchUpInside)
-        btn.frame = CGRect(x: x, y: 120, width: 150, height: 50)
-        scroll.addSubview(btn)
-        //
-        btn = QtViewFactory.button(text: "yy text", font: QtFont.regularPF(15), textColor:QtColor.blue, bgColor:QtColor.white, cornerRadius: 2, borderColor: QtColor.blue)
-        btn.addTarget(self, action: #selector(actionYYText), for: .touchUpInside)
-        btn.frame = CGRect(x: x, y: 190, width: 150, height: 50)
-        scroll.addSubview(btn)
-        //
-        btn = QtViewFactory.button(text: "get json", font: QtFont.regularPF(15), textColor:QtColor.blue, bgColor:QtColor.white, cornerRadius: 2, borderColor: QtColor.blue)
-        btn.addTarget(self, action: #selector(actionGetJson), for: .touchUpInside)
-        btn.frame = CGRect(x: x, y: 260, width: 150, height: 50)
-        scroll.addSubview(btn)
-        //
-        btn = QtViewFactory.button(text: "hex color", font: QtFont.regularPF(15), textColor:QtColor.blue, bgColor:QtColor.white, cornerRadius: 2, borderColor: QtColor.blue)
-        btn.addTarget(self, action: #selector(actionHexColor), for: .touchUpInside)
-        btn.frame = CGRect(x: x, y: 330, width: 150, height: 50)
-        scroll.addSubview(btn)
-        //
-        btn = QtViewFactory.button(text: "draw rect", font: QtFont.regularPF(15), textColor:QtColor.blue, bgColor:QtColor.white, cornerRadius: 2, borderColor: QtColor.blue)
-        btn.addTarget(self, action: #selector(actionDrawRect), for: .touchUpInside)
-        btn.frame = CGRect(x: x, y: 400, width: 150, height: 50)
-        scroll.addSubview(btn)
-        //
-        btn = QtViewFactory.button(text: "timer", font: QtFont.regularPF(15), textColor:QtColor.blue, bgColor:QtColor.white, cornerRadius: 2, borderColor: QtColor.blue)
-        btn.addTarget(self, action: #selector(actionTimer), for: .touchUpInside)
-        btn.frame = CGRect(x: x, y: 470, width: 150, height: 50)
-        scroll.addSubview(btn)
-        //
-        btn = QtViewFactory.button(text: "Notice", font: QtFont.regularPF(15), textColor:QtColor.blue, bgColor:QtColor.white, cornerRadius: 2, borderColor: QtColor.blue)
-        btn.addTarget(self, action: #selector(actionNotice), for: .touchUpInside)
-        btn.frame = CGRect(x: x, y: 540, width: 150, height: 50)
-        scroll.addSubview(btn)
-        //
-        btn = QtViewFactory.button(text: "GridView", font: QtFont.regularPF(15), textColor:QtColor.blue, bgColor:QtColor.white, cornerRadius: 2, borderColor: QtColor.blue)
-        btn.addTarget(self, action: #selector(actionGridView), for: .touchUpInside)
-        btn.frame = CGRect(x: x, y: 610, width: 150, height: 50)
-        scroll.addSubview(btn)
-        //
-        btn = QtViewFactory.button(text: "KVO", font: QtFont.regularPF(15), textColor:QtColor.blue, bgColor:QtColor.white, cornerRadius: 2, borderColor: QtColor.blue)
-        btn.addTarget(self, action: #selector(actionKVO), for: .touchUpInside)
-        btn.frame = CGRect(x: x, y: 680, width: 150, height: 50)
-        scroll.addSubview(btn)
-        //
-        btn = QtViewFactory.button(text: "AgoraAudient", font: QtFont.regularPF(15), textColor:QtColor.blue, bgColor:QtColor.white, cornerRadius: 2, borderColor: QtColor.blue)
-        btn.addTarget(self, action: #selector(actionAgoraAudient), for: .touchUpInside)
-        btn.frame = CGRect(x: x, y: 750, width: 150, height: 50)
-        scroll.addSubview(btn)
-        //
-        btn = QtViewFactory.button(text: "AgoraBroadcaster", font: QtFont.regularPF(15), textColor:QtColor.blue, bgColor:QtColor.white, cornerRadius: 2, borderColor: QtColor.blue)
-        btn.addTarget(self, action: #selector(actionAgoraBroadcaster), for: .touchUpInside)
-        btn.frame = CGRect(x: x, y: 820, width: 150, height: 50)
-        scroll.addSubview(btn)
-        //
-        scroll.contentSize = CGSize(width:0, height:970)
+        scroll.contentSize = CGSize(width:0, height:1040)
+    }
+    
+    @objc func actionDevice(){
+        QtSwift.print("===== deviceModel:\(QtDevice.deviceModel) iosRawVersion:\(QtDevice.iosRawVersion) =====")
+    }
+    
+    @objc func actionSubString(){
+        let str = "Hello world"
+        QtSwift.print("===== \(str.qt_subString(0, len: 7)) =====")
+    }
+    
+    @objc func actionNullable(){
+        let obj = MyObject()
+        obj.age = 3
+        obj.name = "jsk"
+        QtSwift.print("===== \(obj.age) \(obj.name) =====")
+        QtSwift.print("===== \(obj.age == 3) =====")
     }
     
     @objc func actionAgoraBroadcaster(){
         self.navigationController!.pushViewController(AgoraBroadcasterController(), animated: true)
-    }
-    
-    @objc func actionAgoraAudient(){
-        self.navigationController!.pushViewController(AgoraAudientController(), animated: true)
     }
     
     @objc func actionKVO(){
@@ -170,5 +137,13 @@ class RootController: UIViewController {
     
     @objc func actionMethodExchange(_ sender: Any) {
         self.navigationController!.pushViewController(AViewController(), animated: true)
+    }
+    
+    func createBtn(_ name:String, y:CGFloat, action:Selector){
+        let btn = QtViewFactory.button(text: name, font: QtFont.regularPF(15), textColor:QtColor.blue, bgColor:QtColor.white, cornerRadius: 2, borderColor: QtColor.blue)
+        btn.addTarget(self, action: action, for: .touchUpInside)
+        let x = CGFloat(0.5*(QtDevice.screenWidth - 150))
+        btn.frame = CGRect(x: x, y: y, width: 150, height: 50)
+        scroll.addSubview(btn)
     }
 }
