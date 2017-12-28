@@ -1,9 +1,9 @@
 //
 //  QtTimer.swift
-//  xSpace-swift
+//  LiveAssistant
 //
 //  Created by JSK on 2017/11/14.
-//  Copyright © 2017年 JSK. All rights reserved.
+//  Copyright © 2017年 Shanghai MarkPhone Culture Media Co., Ltd. All rights reserved.
 //
 
 import UIKit
@@ -20,7 +20,7 @@ class QtTimer: NSObject {
     
     init(interval:DispatchTimeInterval, queue:DispatchQueue, action:@escaping ()->()){
         super.init()
-        self.queue = queue
+        self.queue = DispatchQueue.global()
         self.action = action
         let timer = DispatchSource.makeTimerSource(queue: queue)
         self.timer = timer
@@ -61,3 +61,4 @@ class QtTimer: NSObject {
         self.action()
     }
 }
+

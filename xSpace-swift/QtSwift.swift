@@ -12,7 +12,7 @@ class QtSwift: NSObject {
     
     static func print(_ object:Any){
         #if DEBUG
-            Swift.print(object)
+            Swift.print("[\(Date())] \(object)")
         #endif
     }
     

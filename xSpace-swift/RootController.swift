@@ -44,12 +44,17 @@ class RootController: UIViewController {
         self.createBtn("notice", y: 540, action: #selector(self.actionNotice))
         self.createBtn("GridView", y: 610, action: #selector(self.actionGridView))
         self.createBtn("KVO", y: 680, action: #selector(self.actionKVO))
-        self.createBtn("Agora Master", y: 750, action: #selector(self.actionAgoraBroadcaster))
+        self.createBtn("Agora Master", y: 750, action: #selector(self.actionAgoraMaster))
         self.createBtn("Nullable", y: 820, action: #selector(self.actionNullable))
         self.createBtn("Substring", y: 890, action: #selector(self.actionSubString))
         self.createBtn("deviceInfo", y: 960, action: #selector(self.actionDevice))
+        self.createBtn("RxSwift", y: 960, action: #selector(self.actionRxSwift))
         //
         scroll.contentSize = CGSize(width:0, height:1040)
+    }
+    
+    @objc func actionRxSwift(){
+        self.navigationController!.pushViewController(RxSwiftController(), animated: true)
     }
     
     @objc func actionDevice(){
@@ -69,8 +74,8 @@ class RootController: UIViewController {
         QtSwift.print("===== \(obj.age == 3) =====")
     }
     
-    @objc func actionAgoraBroadcaster(){
-        self.navigationController!.pushViewController(AgoraBroadcasterController(), animated: true)
+    @objc func actionAgoraMaster(){
+        self.navigationController!.pushViewController(AgoraMasterController(), animated: true)
     }
     
     @objc func actionKVO(){
