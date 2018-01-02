@@ -56,6 +56,11 @@
 		63FFE7191FF4915500C96F70 /* AgoraMasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFE7181FF4915500C96F70 /* AgoraMasterController.swift */; };
 		63FFE71D1FF4959E00C96F70 /* laugh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 63FFE71C1FF4959E00C96F70 /* laugh.mp3 */; };
 		63FFE71E1FF49F7600C96F70 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6391A88C1FBE909200431D72 /* libz.tbd */; };
+		63FFE7261FF4A81600C96F70 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63FFE7251FF4A81600C96F70 /* SystemConfiguration.framework */; };
+		63FFE7291FF4E75000C96F70 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFE7281FF4E75000C96F70 /* AnimationController.swift */; };
+		63FFE7301FF5FD1E00C96F70 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFE72F1FF5FD1E00C96F70 /* CollectionViewController.swift */; };
+		63FFE7321FF62C5400C96F70 /* ghost.wav in Resources */ = {isa = PBXBuildFile; fileRef = 63FFE7311FF62C5300C96F70 /* ghost.wav */; };
+		63FFE77C1FF7674A00C96F70 /* QtToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFE77B1FF7674A00C96F70 /* QtToast.swift */; };
 		EE13B97998AC0BE5E01950AF /* Pods_xSpace_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E59FB21DBB978D04BCA7F78 /* Pods_xSpace_swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +120,11 @@
 		63F1F9091F91D49300CA8466 /* H5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = H5ViewController.swift; sourceTree = "<group>"; };
 		63FFE7181FF4915500C96F70 /* AgoraMasterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgoraMasterController.swift; sourceTree = "<group>"; };
 		63FFE71C1FF4959E00C96F70 /* laugh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = laugh.mp3; sourceTree = "<group>"; };
+		63FFE7251FF4A81600C96F70 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		63FFE7281FF4E75000C96F70 /* AnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
+		63FFE72F1FF5FD1E00C96F70 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		63FFE7311FF62C5300C96F70 /* ghost.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ghost.wav; sourceTree = "<group>"; };
+		63FFE77B1FF7674A00C96F70 /* QtToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtToast.swift; sourceTree = "<group>"; };
 		7858ABFC921EB29F0F862B54 /* Pods-xSpace-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xSpace-swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-xSpace-swift/Pods-xSpace-swift.release.xcconfig"; sourceTree = "<group>"; };
 		8EE3545C7E4940D0C03FC28A /* Pods-xSpace-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xSpace-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xSpace-swift/Pods-xSpace-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		9E59FB21DBB978D04BCA7F78 /* Pods_xSpace_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_xSpace_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63FFE7261FF4A81600C96F70 /* SystemConfiguration.framework in Frameworks */,
 				63FFE71E1FF49F7600C96F70 /* libz.tbd in Frameworks */,
 				6391A8931FBE912C00431D72 /* VideoToolbox.framework in Frameworks */,
 				6391A8911FBE911A00431D72 /* CoreMotion.framework in Frameworks */,
@@ -154,6 +165,7 @@
 		46EF79A01301B69F686EE1EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				63FFE7251FF4A81600C96F70 /* SystemConfiguration.framework */,
 				6391A8921FBE912C00431D72 /* VideoToolbox.framework */,
 				6391A8901FBE911A00431D72 /* CoreMotion.framework */,
 				6391A88E1FBE910300431D72 /* libresolv.tbd */,
@@ -232,6 +244,7 @@
 		63BD76211F9853C6004D25D4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				63FFE77B1FF7674A00C96F70 /* QtToast.swift */,
 				633538A11FE7717000EC99C5 /* QtTask.swift */,
 				63D3F43B1FC8463B0061B993 /* QtSwift.swift */,
 				6391A8A41FC063FA00431D72 /* QtAlert.swift */,
@@ -300,6 +313,8 @@
 		63EE25261F8CBFC400E1A36A /* xSpace-swift */ = {
 			isa = PBXGroup;
 			children = (
+				63FFE72E1FF5FCD600C96F70 /* CollectionView */,
+				63FFE7271FF4E71900C96F70 /* Animation */,
 				63FFE71A1FF4955800C96F70 /* Resources */,
 				6335389B1FE769B500EC99C5 /* RxSwift */,
 				630A14191FD15E2700B0864B /* Nullable */,
@@ -345,9 +360,26 @@
 		63FFE71B1FF4957E00C96F70 /* audio */ = {
 			isa = PBXGroup;
 			children = (
+				63FFE7311FF62C5300C96F70 /* ghost.wav */,
 				63FFE71C1FF4959E00C96F70 /* laugh.mp3 */,
 			);
 			name = audio;
+			sourceTree = "<group>";
+		};
+		63FFE7271FF4E71900C96F70 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				63FFE7281FF4E75000C96F70 /* AnimationController.swift */,
+			);
+			name = Animation;
+			sourceTree = "<group>";
+		};
+		63FFE72E1FF5FCD600C96F70 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				63FFE72F1FF5FD1E00C96F70 /* CollectionViewController.swift */,
+			);
+			name = CollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,6 +453,7 @@
 				63F1F90C1F91D49300CA8466 /* Demo.html in Resources */,
 				63EE252F1F8CBFC400E1A36A /* Assets.xcassets in Resources */,
 				63EE252D1F8CBFC400E1A36A /* Main.storyboard in Resources */,
+				63FFE7321FF62C5400C96F70 /* ghost.wav in Resources */,
 				63FFE71D1FF4959E00C96F70 /* laugh.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,12 +539,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63FFE7301FF5FD1E00C96F70 /* CollectionViewController.swift in Sources */,
 				639296B61FAC8105008E0935 /* ObjectWrapper.swift in Sources */,
 				63E28CC81FA862D700F22C44 /* QtFont.swift in Sources */,
 				63BD76231F9853F4004D25D4 /* Extensions.swift in Sources */,
 				63BF0DD51FBAE95700196680 /* KVOTestController.swift in Sources */,
+				63FFE7291FF4E75000C96F70 /* AnimationController.swift in Sources */,
 				6387BD2D1F9F01C600D5BD66 /* AViewController.swift in Sources */,
 				630A141B1FD15E4C00B0864B /* MyObject.swift in Sources */,
+				63FFE77C1FF7674A00C96F70 /* QtToast.swift in Sources */,
 				6391A8A51FC063FA00431D72 /* QtAlert.swift in Sources */,
 				63E28CC61FA862D700F22C44 /* QtFullscreenPopGesture.swift in Sources */,
 				63E3B5B91FAABFD80039FE5D /* QtWebView.swift in Sources */,
@@ -685,7 +721,7 @@
 					"$(PROJECT_DIR)/ThirdParty",
 				);
 				INFOPLIST_FILE = "xSpace-swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xspace.xSpace-swift.xSpace-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -708,7 +744,7 @@
 					"$(PROJECT_DIR)/ThirdParty",
 				);
 				INFOPLIST_FILE = "xSpace-swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xspace.xSpace-swift.xSpace-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";

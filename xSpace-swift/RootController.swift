@@ -48,9 +48,29 @@ class RootController: UIViewController {
         self.createBtn("Nullable", y: 820, action: #selector(self.actionNullable))
         self.createBtn("Substring", y: 890, action: #selector(self.actionSubString))
         self.createBtn("deviceInfo", y: 960, action: #selector(self.actionDevice))
-        self.createBtn("RxSwift", y: 960, action: #selector(self.actionRxSwift))
+        self.createBtn("RxSwift", y: 1030, action: #selector(self.actionRxSwift))
+        self.createBtn("Animation", y: 1100, action: #selector(self.actionAnimation))
+        self.createBtn("CollectionView", y: 1170, action: #selector(self.actionCollectionView))
+        self.createBtn("QtToast", y: 1240, action: #selector(self.actionToast))
+        self.createBtn("QtToast inView", y: 1310, action: #selector(self.actionToastInView))
         //
-        scroll.contentSize = CGSize(width:0, height:1040)
+        scroll.contentSize = CGSize(width:0, height:1410)
+    }
+    
+    @objc func actionToastInView(){
+        QtToast.show("哈哈哈", duration: 2, distanceToBottom: 30, inView: self.view)
+    }
+    
+    @objc func actionToast(){
+        QtToast.show("哈哈哈哈哈哈")
+    }
+    
+    @objc func actionCollectionView(){
+        self.navigationController!.pushViewController(CollectionViewController(), animated: true)
+    }
+    
+    @objc func actionAnimation(){
+        self.navigationController!.pushViewController(AnimationController(), animated: true)
     }
     
     @objc func actionRxSwift(){

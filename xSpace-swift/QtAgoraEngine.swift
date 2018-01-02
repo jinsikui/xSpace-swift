@@ -123,10 +123,19 @@ class QtAgoraEngine: NSObject,AgoraLiveDelegate,AgoraLivePublisherDelegate,Agora
         channelConfig.videoEnabled = false
     }
     
-    func sendAudioEffect(filePath:String){
+    func startAudioEffect(filePath:String){
         if(self.status == .connected){
-            self.liveKit.getRtcEngineKit().playEffect(1000, filePath: filePath, loop: false, pitch: 1.0, pan: 0, gain: 100)
+            self.liveKit.getRtcEngineKit().startAudioMixing(filePath, loopback: false, replace: false, cycle: 1)
+            QtSwift.print("===== audioMixingDuration(ms): \(self.liveKit.getRtcEngineKit().getAudioMixingDuration()) =====")
         }
+    }
+    
+    func stopAudioEffect(){
+        self.liveKit.getRtcEngineKit().stopAudioMixing()
+    }
+    
+    func rtcEngineLocalAudioMixingDidFinish(_ engine: AgoraRtcEngineKit) {
+        QtSwift.print("===== rtcEngineLocalAudioMixingDidFinish =====")
     }
     
     //静音／关闭静音
