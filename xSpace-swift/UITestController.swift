@@ -9,6 +9,7 @@
 import UIKit
 import MJRefresh
 import KVOController
+import Promises
 
 class ViewModel:NSObject{
     dynamic var rowCount = 5
