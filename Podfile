@@ -14,7 +14,6 @@ target 'xSpace-swift' do
   pod 'PKHUD'
   pod 'KVOController'
   pod 'MJRefresh'
- pod 'PromisesSwift', '~> 1.2.1'
 end
 
 post_install do |installer|
