@@ -11,6 +11,7 @@
 		6302FEC91FAD49C500F978DA /* NoticeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6302FEC81FAD49C500F978DA /* NoticeController.swift */; };
 		6302FECC1FAD844400F978DA /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6302FECB1FAD844400F978DA /* GridViewController.swift */; };
 		630A141B1FD15E4C00B0864B /* MyObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630A141A1FD15E4C00B0864B /* MyObject.swift */; };
+		6334EC662019A4F6003AAE23 /* TestLiveCycleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6334EC652019A4F6003AAE23 /* TestLiveCycleController.swift */; };
 		633538A01FE76E7000EC99C5 /* RxSwiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335389F1FE76E7000EC99C5 /* RxSwiftController.swift */; };
 		633538A21FE7717000EC99C5 /* QtTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633538A11FE7717000EC99C5 /* QtTask.swift */; };
 		6387BD2B1F9F014D00D5BD66 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387BD2A1F9F014D00D5BD66 /* BaseViewController.swift */; };
@@ -29,9 +30,12 @@
 		639296B61FAC8105008E0935 /* ObjectWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639296B51FAC8105008E0935 /* ObjectWrapper.swift */; };
 		639296B91FACB3BD008E0935 /* QtNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639296B81FACB3BD008E0935 /* QtNotice.swift */; };
 		63BD76231F9853F4004D25D4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD76221F9853F4004D25D4 /* Extensions.swift */; };
+		63BE0BBD1FFE20210089E451 /* QtSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE0BBC1FFE20210089E451 /* QtSwitch.swift */; };
+		63BE0BC01FFE20B20089E451 /* UITestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE0BBF1FFE20B20089E451 /* UITestController.swift */; };
 		63BF0DCF1FBAC75500196680 /* QtTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF0DCE1FBAC75500196680 /* QtTimer.swift */; };
 		63BF0DD51FBAE95700196680 /* KVOTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF0DD41FBAE95700196680 /* KVOTestController.swift */; };
 		63D3F43C1FC8463B0061B993 /* QtSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D3F43B1FC8463B0061B993 /* QtSwift.swift */; };
+		63DA84B4201CE2C1007E1227 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DA84B3201CE2C1007E1227 /* Config.swift */; };
 		63E28CBE1FA8626500F22C44 /* QtViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28CBD1FA8626500F22C44 /* QtViewFactory.swift */; };
 		63E28CC41FA862D700F22C44 /* QtGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28CBF1FA862D700F22C44 /* QtGridView.swift */; };
 		63E28CC51FA862D700F22C44 /* QtDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28CC01FA862D700F22C44 /* QtDevice.swift */; };
@@ -41,10 +45,12 @@
 		63E28CCB1FA8679C00F22C44 /* YYTextController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28CCA1FA8679C00F22C44 /* YYTextController.swift */; };
 		63E28CD01FA8AB8E00F22C44 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28CCE1FA8AB8E00F22C44 /* API.swift */; };
 		63E28CD51FA8ACA900F22C44 /* QtFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28CD41FA8ACA800F22C44 /* QtFile.swift */; };
+		63E2D5002010D2990034F54A /* RedEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2D4FF2010D2990034F54A /* RedEntryView.swift */; };
 		63E3B5B91FAABFD80039FE5D /* QtWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E3B5B81FAABFD80039FE5D /* QtWebView.swift */; };
 		63E3B5BF1FAAC2470039FE5D /* DrawController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E3B5BE1FAAC2470039FE5D /* DrawController.swift */; };
 		63E3B5C11FAAC2930039FE5D /* QtBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E3B5C01FAAC2930039FE5D /* QtBaseViewController.swift */; };
 		63E3B5C31FAAC2FD0039FE5D /* QtCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E3B5C21FAAC2FD0039FE5D /* QtCornerView.swift */; };
+		63E672B12124E8A9005F8A0E /* AnimationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E672B02124E8A9005F8A0E /* AnimationsController.swift */; };
 		63EE25281F8CBFC400E1A36A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EE25271F8CBFC400E1A36A /* AppDelegate.swift */; };
 		63EE252D1F8CBFC400E1A36A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EE252B1F8CBFC400E1A36A /* Main.storyboard */; };
 		63EE252F1F8CBFC400E1A36A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63EE252E1F8CBFC400E1A36A /* Assets.xcassets */; };
@@ -69,6 +75,7 @@
 		6302FEC81FAD49C500F978DA /* NoticeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeController.swift; sourceTree = "<group>"; };
 		6302FECB1FAD844400F978DA /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
 		630A141A1FD15E4C00B0864B /* MyObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyObject.swift; sourceTree = "<group>"; };
+		6334EC652019A4F6003AAE23 /* TestLiveCycleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLiveCycleController.swift; sourceTree = "<group>"; };
 		6335389F1FE76E7000EC99C5 /* RxSwiftController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftController.swift; sourceTree = "<group>"; };
 		633538A11FE7717000EC99C5 /* QtTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtTask.swift; sourceTree = "<group>"; };
 		6387BD2A1F9F014D00D5BD66 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -92,9 +99,12 @@
 		639296B51FAC8105008E0935 /* ObjectWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectWrapper.swift; sourceTree = "<group>"; };
 		639296B81FACB3BD008E0935 /* QtNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtNotice.swift; sourceTree = "<group>"; };
 		63BD76221F9853F4004D25D4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		63BE0BBC1FFE20210089E451 /* QtSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QtSwitch.swift; sourceTree = "<group>"; };
+		63BE0BBF1FFE20B20089E451 /* UITestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestController.swift; sourceTree = "<group>"; };
 		63BF0DCE1FBAC75500196680 /* QtTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QtTimer.swift; sourceTree = "<group>"; };
 		63BF0DD41FBAE95700196680 /* KVOTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVOTestController.swift; sourceTree = "<group>"; };
 		63D3F43B1FC8463B0061B993 /* QtSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtSwift.swift; sourceTree = "<group>"; };
+		63DA84B3201CE2C1007E1227 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		63E28CBD1FA8626500F22C44 /* QtViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtViewFactory.swift; sourceTree = "<group>"; };
 		63E28CBF1FA862D700F22C44 /* QtGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtGridView.swift; sourceTree = "<group>"; };
 		63E28CC01FA862D700F22C44 /* QtDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtDevice.swift; sourceTree = "<group>"; };
@@ -104,10 +114,12 @@
 		63E28CCA1FA8679C00F22C44 /* YYTextController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYTextController.swift; sourceTree = "<group>"; };
 		63E28CCE1FA8AB8E00F22C44 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		63E28CD41FA8ACA800F22C44 /* QtFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtFile.swift; sourceTree = "<group>"; };
+		63E2D4FF2010D2990034F54A /* RedEntryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedEntryView.swift; sourceTree = "<group>"; };
 		63E3B5B81FAABFD80039FE5D /* QtWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QtWebView.swift; sourceTree = "<group>"; };
 		63E3B5BE1FAAC2470039FE5D /* DrawController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawController.swift; sourceTree = "<group>"; };
 		63E3B5C01FAAC2930039FE5D /* QtBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QtBaseViewController.swift; sourceTree = "<group>"; };
 		63E3B5C21FAAC2FD0039FE5D /* QtCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QtCornerView.swift; sourceTree = "<group>"; };
+		63E672B02124E8A9005F8A0E /* AnimationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsController.swift; sourceTree = "<group>"; };
 		63EE25241F8CBFC400E1A36A /* xSpace-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "xSpace-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63EE25271F8CBFC400E1A36A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63EE252C1F8CBFC400E1A36A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -210,6 +222,7 @@
 		6335389B1FE769B500EC99C5 /* RxSwift */ = {
 			isa = PBXGroup;
 			children = (
+				63FFE71A1FF4955800C96F70 /* Resources */,
 				6335389F1FE76E7000EC99C5 /* RxSwiftController.swift */,
 			);
 			name = RxSwift;
@@ -244,6 +257,7 @@
 		63BD76211F9853C6004D25D4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				63DA84B3201CE2C1007E1227 /* Config.swift */,
 				63FFE77B1FF7674A00C96F70 /* QtToast.swift */,
 				633538A11FE7717000EC99C5 /* QtTask.swift */,
 				63D3F43B1FC8463B0061B993 /* QtSwift.swift */,
@@ -264,6 +278,24 @@
 				63BF0DCE1FBAC75500196680 /* QtTimer.swift */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		63BE0BBB1FFE200B0089E451 /* QtSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				63BE0BBC1FFE20210089E451 /* QtSwitch.swift */,
+			);
+			name = QtSwitch;
+			sourceTree = "<group>";
+		};
+		63BE0BBE1FFE20980089E451 /* UITest */ = {
+			isa = PBXGroup;
+			children = (
+				63BE0BBF1FFE20B20089E451 /* UITestController.swift */,
+				63E2D4FF2010D2990034F54A /* RedEntryView.swift */,
+				6334EC652019A4F6003AAE23 /* TestLiveCycleController.swift */,
+			);
+			name = UITest;
 			sourceTree = "<group>";
 		};
 		63BF0DD31FBAE91A00196680 /* KVO */ = {
@@ -291,6 +323,14 @@
 			name = Draw;
 			sourceTree = "<group>";
 		};
+		63E672AF2124E842005F8A0E /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				63E672B02124E8A9005F8A0E /* AnimationsController.swift */,
+			);
+			name = Animations;
+			sourceTree = "<group>";
+		};
 		63EE251B1F8CBFC400E1A36A = {
 			isa = PBXGroup;
 			children = (
@@ -313,9 +353,11 @@
 		63EE25261F8CBFC400E1A36A /* xSpace-swift */ = {
 			isa = PBXGroup;
 			children = (
+				63E672AF2124E842005F8A0E /* Animations */,
+				63BE0BBE1FFE20980089E451 /* UITest */,
+				63BE0BBB1FFE200B0089E451 /* QtSwitch */,
 				63FFE72E1FF5FCD600C96F70 /* CollectionView */,
 				63FFE7271FF4E71900C96F70 /* Animation */,
-				63FFE71A1FF4955800C96F70 /* Resources */,
 				6335389B1FE769B500EC99C5 /* RxSwift */,
 				630A14191FD15E2700B0864B /* Nullable */,
 				6391A8761FBE888800431D72 /* Agora */,
@@ -394,7 +436,6 @@
 				63EE25211F8CBFC400E1A36A /* Frameworks */,
 				63EE25221F8CBFC400E1A36A /* Resources */,
 				B87EF942AD18B13E9B326717 /* [CP] Embed Pods Frameworks */,
-				42CFBF7C2EF1151804637D4A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -461,21 +502,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		42CFBF7C2EF1151804637D4A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-xSpace-swift/Pods-xSpace-swift-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6A8855E630D2BCC6413533F3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -504,7 +530,10 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesSwift/Promises.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -518,7 +547,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -553,16 +585,21 @@
 				63E3B5B91FAABFD80039FE5D /* QtWebView.swift in Sources */,
 				63BF0DCF1FBAC75500196680 /* QtTimer.swift in Sources */,
 				6302FECC1FAD844400F978DA /* GridViewController.swift in Sources */,
+				6334EC662019A4F6003AAE23 /* TestLiveCycleController.swift in Sources */,
 				63E28CCB1FA8679C00F22C44 /* YYTextController.swift in Sources */,
+				63E672B12124E8A9005F8A0E /* AnimationsController.swift in Sources */,
 				63E28CC41FA862D700F22C44 /* QtGridView.swift in Sources */,
+				63DA84B4201CE2C1007E1227 /* Config.swift in Sources */,
 				63E28CD51FA8ACA900F22C44 /* QtFile.swift in Sources */,
 				63E28CBE1FA8626500F22C44 /* QtViewFactory.swift in Sources */,
 				63F1F8F31F905D2D00CA8466 /* ControllerManager.swift in Sources */,
 				6391A8A01FBEA1A700431D72 /* QtAgoraEngine.swift in Sources */,
+				63BE0BBD1FFE20210089E451 /* QtSwitch.swift in Sources */,
 				6302FEC61FACCE8400F978DA /* QtWebViewController.swift in Sources */,
 				633538A01FE76E7000EC99C5 /* RxSwiftController.swift in Sources */,
 				63E28CC51FA862D700F22C44 /* QtDevice.swift in Sources */,
 				639296B91FACB3BD008E0935 /* QtNotice.swift in Sources */,
+				63BE0BC01FFE20B20089E451 /* UITestController.swift in Sources */,
 				6387BD2B1F9F014D00D5BD66 /* BaseViewController.swift in Sources */,
 				6302FEC91FAD49C500F978DA /* NoticeController.swift in Sources */,
 				63EE25281F8CBFC400E1A36A /* AppDelegate.swift in Sources */,
@@ -574,6 +611,7 @@
 				63E3B5BF1FAAC2470039FE5D /* DrawController.swift in Sources */,
 				63FFE7191FF4915500C96F70 /* AgoraMasterController.swift in Sources */,
 				633538A21FE7717000EC99C5 /* QtTask.swift in Sources */,
+				63E2D5002010D2990034F54A /* RedEntryView.swift in Sources */,
 				63E28CD01FA8AB8E00F22C44 /* API.swift in Sources */,
 				63E28CC71FA862D700F22C44 /* QtColor.swift in Sources */,
 			);
@@ -723,7 +761,7 @@
 				INFOPLIST_FILE = "xSpace-swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.xspace.xSpace-swift.xSpace-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xspace.xSpace-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "xSpace-swift/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -746,7 +784,7 @@
 				INFOPLIST_FILE = "xSpace-swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.xspace.xSpace-swift.xSpace-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xspace.xSpace-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "xSpace-swift/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

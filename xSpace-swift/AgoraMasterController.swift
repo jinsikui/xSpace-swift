@@ -18,6 +18,7 @@ class AgoraMasterController: QtBaseViewController,AgoraLiveDelegate,AgoraLivePub
     var audioFilePath2 = ""
     var status:QtAgoraConnectStatus = .stop
     var audioEffectBtn:UIButton?
+    var pushUrl = "rtmp://pili-publish.partner.zhibo.qingting.fm/qingting-zhibo-partner/test_agora4"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +70,9 @@ class AgoraMasterController: QtBaseViewController,AgoraLiveDelegate,AgoraLivePub
             case .stop:
                 break
             case .streamError:
+                _ = QtTask.asyncMain(afterSecs: 1, task: {[weak self] in
+                    self?.restartLive()
+                })
                 break
             case .sdkError:
                 break
@@ -76,11 +80,14 @@ class AgoraMasterController: QtBaseViewController,AgoraLiveDelegate,AgoraLivePub
             
         }
         self.agoraEngine = QtAgoraEngine(channel: self.channel,
-                                         pushStreamUrl: "rtmp://pili-publish.partner.zhibo.qingting.fm/qingting-zhibo-partner/test_agora3",
+                                         pushStreamUrl: self.pushUrl,
                                          publisherId: self.uid,
                                          agoraKey:nil)
         self.agoraEngine.startLive()
-        
+    }
+    
+    func restartLive(){
+        self.agoraEngine.startLive(pushStreamUrl: self.pushUrl)
     }
     
     func actionStop(){

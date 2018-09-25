@@ -197,6 +197,9 @@ class QtAgoraEngine: NSObject,AgoraLiveDelegate,AgoraLivePublisherDelegate,Agora
             self.lock.unlock()
             //
             publisher.addStreamUrl(self.pushStreamUrl!, transcodingEnabled: true)
+            //硬编码测试
+//            publisher.addStreamUrl("rtmp://pili-publish.partner.zhibo.qingting.fm/qingting-zhibo-partner/test_publish", transcodingEnabled: true)
+//            publisher.addStreamUrl("rtmp://ds-uswest1.zhibo.qingting.fm:1935/live/100009070", transcodingEnabled: true)
             QtSwift.print("===== publisher.addStreamUrl:\(self.pushStreamUrl!) transcodingEnabled: true =====")
 //            API.shared.sendBeacon(name: "hostinp", event: "add_stream_url", params: nil, commonParams: self.commonBeacon)
         }
@@ -248,6 +251,9 @@ class QtAgoraEngine: NSObject,AgoraLiveDelegate,AgoraLivePublisherDelegate,Agora
         //添加推流地址
         if(self.pushStreamUrl != nil){
             publisher.addStreamUrl(self.pushStreamUrl!, transcodingEnabled: true)
+            //硬编码测试
+//            publisher.addStreamUrl("rtmp://pili-publish.partner.zhibo.qingting.fm/qingting-zhibo-partner/test_publish", transcodingEnabled: true)
+//            publisher.addStreamUrl("rtmp://ds-uswest1.zhibo.qingting.fm:1935/live/100009070", transcodingEnabled: true)
             QtSwift.print("===== publisher.addStreamUrl:\(self.pushStreamUrl!) transcodingEnabled: true =====")
 //            API.shared.sendBeacon(name: "hostinp", event: "add_stream_url", params: nil, commonParams: self.commonBeacon)
         }

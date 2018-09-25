@@ -3,7 +3,11 @@ PODS:
   - AlamofireImage (3.3.0):
     - Alamofire (~> 4.5)
   - KVOController (1.2.0)
+  - MJRefresh (3.1.15.1)
   - PKHUD (5.0.0)
+  - PromisesObjC (1.2.1)
+  - PromisesSwift (1.2.1):
+    - PromisesObjC (= 1.2.1)
   - RxAlamofire (3.0.3):
     - RxAlamofire/Core (= 3.0.3)
   - RxAlamofire/Core (3.0.3):
@@ -20,18 +24,40 @@ PODS:
 DEPENDENCIES:
   - AlamofireImage
   - KVOController
+  - MJRefresh
   - PKHUD
+  - PromisesSwift (~> 1.2.1)
   - RxAlamofire
   - SnapKit (~> 3.0.0)
   - SwiftyJSON
   - SwinjectStoryboard
   - YYText
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
+    - KVOController
+    - MJRefresh
+    - PKHUD
+    - PromisesObjC
+    - PromisesSwift
+    - RxAlamofire
+    - RxSwift
+    - SnapKit
+    - SwiftyJSON
+    - Swinject
+    - SwinjectStoryboard
+    - YYText
+
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
+  MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
   PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
+  PromisesObjC: 3d668fb816bf83d13275fd86f66b02ab9f27a1a9
+  PromisesSwift: 622cfb428b861469e5634ec9319051df3f2d3ef8
   RxAlamofire: 5eb39188c4917ad98127c0ecb4878a61b7517003
   RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
@@ -40,6 +66,6 @@ SPEC CHECKSUMS:
   SwinjectStoryboard: 92e75763c3299cdf627bef98a5180dc894864336
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: a1f08c90c000c8e9f8e7fd1db2884e40f67c957c
+PODFILE CHECKSUM: 50be9aeed284b34167f2e985637babd4d511f29a
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3

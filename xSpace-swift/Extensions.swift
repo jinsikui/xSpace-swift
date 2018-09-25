@@ -46,6 +46,19 @@ extension UITableView{
 }
 
 extension UIView {
+    
+    var qt_initialized:Bool{
+        get {
+            if let result = objc_getAssociatedObject(self, UIViewRuntimeKey.qt_initialized!) as? Bool {
+                return result
+            }
+            return false
+        }
+        set {
+            objc_setAssociatedObject(self, UIViewRuntimeKey.qt_initialized!, newValue, .OBJC_ASSOCIATION_ASSIGN)
+        }
+    }
+    
     func addBorder(side: UIBorderSide, color: UIColor, width: CGFloat, insetX: CGFloat=0.0, insetY: CGFloat=0.0) {
         // Add boarder to uiview by add sublayer to the layer
         let border = CALayer()
@@ -67,6 +80,10 @@ extension UIView {
         layer.addSublayer(border)
         border.masksToBounds = true
     }
+}
+
+struct UIViewRuntimeKey {
+    static let qt_initialized = UnsafeRawPointer(bitPattern: "qt_initialized".hashValue)
 }
 
 extension String {

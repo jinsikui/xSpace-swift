@@ -21,6 +21,19 @@ class API {
             return (response, json)
         }.observeOn(MainScheduler.instance)
     }
+    
+    let onlineAppInfoUrl = "http://itunes.apple.com/lookup?id=1187159061"
+    func getOnlineAppInfo() -> Observable<(HTTPURLResponse, Any)> {
+        return SessionManager.default.rx.request(urlRequest: GetRequestConvertible(url:onlineAppInfoUrl)).flatMap {
+            $0
+                .validate(statusCode: 200 ..< 300)
+                .rx
+                .responseData()
+            }.map { (response, data) in
+                let json = JSON(data)
+                return (response, json)
+            }.observeOn(ConcurrentDispatchQueueScheduler(queue:DispatchQueue.global()))
+    }
 }
 
 class GetRequestConvertible: NSObject,URLRequestConvertible{

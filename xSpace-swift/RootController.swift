@@ -53,8 +53,18 @@ class RootController: UIViewController {
         self.createBtn("CollectionView", y: 1170, action: #selector(self.actionCollectionView))
         self.createBtn("QtToast", y: 1240, action: #selector(self.actionToast))
         self.createBtn("QtToast inView", y: 1310, action: #selector(self.actionToastInView))
+        self.createBtn("UI Test", y: 1380, action: #selector(self.actionUITest))
+        self.createBtn("Animations", y: 1450, action: #selector(self.actionAnimations))
         //
-        scroll.contentSize = CGSize(width:0, height:1410)
+        scroll.contentSize = CGSize(width:0, height:1550)
+    }
+    
+    @objc func actionAnimations(){
+        self.navigationController!.pushViewController(AnimationsController(), animated: true)
+    }
+    
+    @objc func actionUITest(){
+        self.navigationController!.pushViewController(UITestController(), animated: true)
     }
     
     @objc func actionToastInView(){
