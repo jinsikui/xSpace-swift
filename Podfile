@@ -15,4 +15,6 @@ target 'xSpace-swift' do
   pod 'KVOController'
   pod 'MJRefresh'
   pod 'PromisesSwift'
+  pod 'Masonry', "1.1.0"
+  
 end

@@ -3,6 +3,7 @@ PODS:
   - AlamofireImage (3.3.0):
     - Alamofire (~> 4.5)
   - KVOController (1.2.0)
+  - Masonry (1.1.0)
   - MJRefresh (3.1.15.1)
   - PKHUD (5.0.0)
   - PromisesObjC (1.2.1)
@@ -24,6 +25,7 @@ PODS:
 DEPENDENCIES:
   - AlamofireImage
   - KVOController
+  - Masonry (= 1.1.0)
   - MJRefresh
   - PKHUD
   - PromisesSwift
@@ -38,6 +40,7 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - KVOController
+    - Masonry
     - MJRefresh
     - PKHUD
     - PromisesObjC
@@ -54,6 +57,7 @@ SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
   PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
   PromisesObjC: 3d668fb816bf83d13275fd86f66b02ab9f27a1a9
@@ -66,6 +70,6 @@ SPEC CHECKSUMS:
   SwinjectStoryboard: 92e75763c3299cdf627bef98a5180dc894864336
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 22b8153deeb2d0c1a33d60647a588382d7c6416a
+PODFILE CHECKSUM: 3813de5e5c4f0d1571cbc98de09ce42ea75de7f0
 
 COCOAPODS: 1.5.3
